@@ -1,0 +1,9 @@
+# Created by .ignore support plugin (hsz.mobi)
+#IntelliJ Specific
+.idea
+*.iml
+
+target
+node
+node_modules
+gatsby-example-site
