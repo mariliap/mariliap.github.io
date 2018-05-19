@@ -1,7 +1,8 @@
-// import Shell from 'child_process'
-Shell = require('child_process')
+const webpackLodashPlugin = require('lodash-webpack-plugin');
 
-exports.postBuild = function (pages, callback) {
-  Shell.execSync("cp -r static/* public/")
-  callback()
-}
+// Add Lodash plugin
+exports.modifyWebpackConfig = ({ config, stage }) => {
+  if (stage === 'build-javascript') {
+    config.plugin('Lodash', webpackLodashPlugin, null);
+  }
+};
