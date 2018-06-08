@@ -4,7 +4,9 @@
   "version": "1.0.0",
   "author": "Angelo Ocana <angeloocana@gmail.com>",
   "dependencies": {
+    "@types/jest": "^23.0.0",
     "anchor-js": "^4.1.0",
+    "d3": "^5.4.0",
     "gatsby": "^1.9.36",
     "gatsby-link": "^1.6.5",
     "gatsby-plugin-catch-links": "^1.0.22",
@@ -12,7 +14,9 @@
     "gatsby-plugin-i18n-readnext": "^0.0.4",
     "gatsby-plugin-i18n-tags": "^0.0.3",
     "gatsby-plugin-react-helmet": "^1.0.8",
-    "gatsby-plugin-styled-components": "^1.0.4"
+    "gatsby-plugin-styled-components": "^1.0.4",
+    "react-faux-dom": "^4.1.0",
+    "textures": "^1.2.0"
   },
   "keywords": [
     "gatsby"

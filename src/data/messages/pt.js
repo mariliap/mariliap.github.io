@@ -1,7 +1,7 @@
 module.exports = {
   'title': 'Marília Portela Desenvolvimento de Web Apps e Treinamentos',
   'header.title': 'Marília Portela',
-  'header.subTitle': 'Desenvolvimento de Web Apps e Treinamentos',
+  'header.subTitle': 'Engenheira de software',
 
   'home': 'Início',
   'about': 'Sobre mim',

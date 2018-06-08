@@ -36,7 +36,7 @@ const theme = {
   bg: colors.black,
   padding: `0 ${scaleN(1)}rem ${scaleN(10)}rem ${scaleN(0)}rem`,
   margin: '0 auto',
-  maxWidth: '60rem',
+  maxWidth: '120rem',
   borderRadius: '0.2rem',
   lineHeight: 1.5,
   focus: {

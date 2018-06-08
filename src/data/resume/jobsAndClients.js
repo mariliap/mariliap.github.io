@@ -30,16 +30,8 @@ const jobsAndClients = {
           t.react,
           t.gatsby,
           t.graphql,
-          t.styledComponents,
           t.nodejs,
-          t.html,
-          t.css,
-          t.js,
-          t.vscode,
-          t.jest,
-          t.eslint,
-          t.babel,
-          t.surge
+          t.js
         ],
         clients: [
           {
@@ -58,17 +50,8 @@ const jobsAndClients = {
           t.gatsby,
           t.graphql,
           t.react,
-          t.styledComponents,
           t.nodejs,
-          t.html,
-          t.css,
-          t.js,
-          t.vim,
-          t.vscode,
-          t.jest,
-          t.eslint,
-          t.babel,
-          t.surge
+          t.js
         ],
         clients: [
           {

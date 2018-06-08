@@ -12,3 +12,11 @@ public/
 .cache
 
 
+
+
+.idea
+.vscode
+.cache
+public
+node_modules
+node

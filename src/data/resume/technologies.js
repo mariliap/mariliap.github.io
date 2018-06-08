@@ -89,7 +89,7 @@ const technologies = {
     img: 'ramda.png',
     needWhiteBg: true,
     link: 'http://ramdajs.com/'
-  },  
+  },
   typeScript: {
     name: 'TypeScript',
     years: range(2015, thisYear),
