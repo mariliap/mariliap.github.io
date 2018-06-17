@@ -56,11 +56,16 @@ const Nav = styled.nav`
 
 const Subnav = styled.nav`
 	display:inline-flex;
+	position: absolute;
+	width: 8em;
+	left: 0rem;
+	padding-left: ${props => props.theme.menu.padding};
 	> * {
     &:last-child {
-	   display: inline-flex;
-	   float: right;
-	   position: relative;
+	   display: flex;
+	   position: absolute;
+	   left:0;
+	   padding-left: ${props => props.theme.menu.padding};
 	   transition: opacity 1s, transform 0.5s;
 	   transform: ${props => props.isOpen ? 'translateX(-4rem)' : ''};
 	   opacity: ${props => props.isOpen ? 1 : 0};
@@ -68,10 +73,12 @@ const Subnav = styled.nav`
   }
 `;
 const MenuLabel = styled.label`
+  z-index: 12;
   width: ${props => props.theme.menu.label.width};
   height: ${props => props.theme.menu.label.height};
-  position: relative;
-  float: left;
+  position: absolute;
+  top:0;
+  left:2rem;
   cursor: pointer;
   font-size: ${props => props.theme.menu.label.fontSize};
 
@@ -87,10 +94,10 @@ const MenuLabel = styled.label`
 
 const Checkbox = styled.input`
   position: absolute;
-  opacity: 0.02;
+  opacity: 0.002;
   cursor: pointer;
   top: 0;
-  right: 0;
+  left: 0;
   width: 100%;
   height: 100%;
 `;
@@ -117,7 +124,7 @@ const MenuA = MenuLink.withComponent(styled.a``);
 
 const Ul = styled.ul`
     display: block;
-    margin-top: -${props => props.theme.menu.ul.marginTop};
+    margin-top: ${props => props.theme.menu.ul.marginTop};
     margin-left: ${props => props.theme.menu.ul.marginLeft};
     list-style: none;
 

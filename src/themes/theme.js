@@ -175,14 +175,14 @@ const theme = {
         padding: scale(2),
         margin: `0 -${scaleN(2)}rem`,
         hover: {
-          backgroundColor: colors.blackShades[0]
+          backgroundColor: colors.blueishGreyPaletteSand
         },
         header: {
           fontSize: scale(3),
           lineHeight: scaleN(1),
           time: {
             fontSize: scale(0),
-            color: colors.blue
+            color: colors.blueishGreyPalleteBlueText
           }
         },
         p: {

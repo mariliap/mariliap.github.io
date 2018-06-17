@@ -12,26 +12,32 @@ const Nav = styled.nav`
   //margin-right: ${({ theme }) =>  theme.scale(8)};
   //z-index: 11;
   //margin-left:-10%;
-  margin-left: ${props => props.theme.menu.ul.marginLeft};
+  
+  
+  //margin-left: ${props => props.theme.menu.ul.marginLeft};
+  
+  
   //overflow: auto;
   //transition: opacity 1s, transform 0.5s;
   //transform: ${props => props.isOpen ? 'translateX(-4rem)' : ''};
   //opacity: ${props => props.isOpen ? 1 : 0};
-  
+  //display: block;
 `;
 
 const Label = styled.label`
 	
     display: block;
+	z-index: 10;
 	font-size: ${props => props.theme.scale(1)};
     //margin-left: -${props => props.theme.scale(-1)};
 	//padding: ${({ theme }) => theme.scale(-100)};
-	margin-left: auto;
-    margin-right: auto;
+	margin-top: 0.5rem;
+	position:absolute;
+	width:10.5em;
+	left: calc(2rem);
     text-align: right;
     text-decoration: none;
     transition: 0.5s;
-    
 
     color: ${props => props.selected
     ? props.theme.menu.a.active.color
@@ -40,18 +46,21 @@ const Label = styled.label`
 
 const Ul = styled.ul`
   display: block;
+  position:absolute;
+  left:14.9rem;
 `;
 
 const Li = styled.li`
-  width:2.3em;
+  width:1.3em;
   display: block;
-  margin-top:0.35rem;
-  padding:0.1rem;
+  
+  
+  padding:0.15rem;
   font-size: ${props => props.theme.i18n.selectLanguage.li.fontSize};
   cursor: pointer;
   transition: 0.3s;
   ${props => props.selected
-    ? 'box-shadow: 0 0 0.2rem 0.05rem ' +  props.theme.colors.blueishGreyPalletePink + ' inset, 0 0 0 0.19rem ' + props.theme.colors.blueishGreyPalletePink
+    ? 'box-shadow: 0 0 0.2rem 0.05rem ' +  props.theme.colors.blueishGreyPalletePink + ' inset, 0 0 0 0.05rem ' + props.theme.colors.blueishGreyPalletePink
     : ''};
 		
 
