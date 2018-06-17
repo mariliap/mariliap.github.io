@@ -20,6 +20,7 @@ module.exports = {
     } avec l'étiquette`,
 
   'contact': 'Contact',
+  'language': 'Langue',
 
   'resume': `Résumé`,
 

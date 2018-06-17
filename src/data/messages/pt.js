@@ -20,6 +20,7 @@ module.exports = {
     } com a tag`,
 
   'contact': 'Contato',
+  'language': 'Língua',
 
   'resume': `Currículo`,
 

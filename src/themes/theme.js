@@ -19,6 +19,13 @@ const colors = {
   blue: '#85B9BF',
   green: '#9FE80C',
   gray: '#393E41',
+  blueishGrey: '#21232d',
+  blueishGreyPaletteBlue: '#266ABB',
+  blueishGreyPaletteGreen: '#48A6A7',
+  blueishGreyPalettePurple: '#423575',
+  blueishGreyPaletteSand: '#C5C3A0',
+  blueishGreyPalletePink:'#f92672',
+  blueishGreyPalleteBlueText:'#2895f2',
 
   blackShades: [
     '#32342D'
@@ -33,7 +40,7 @@ const theme = {
   colors,
   fontFamily,
   color: colors.white,
-  bg: colors.black,
+  bg: colors.blueishGrey,
   padding: `0 ${scaleN(1)}rem ${scaleN(10)}rem ${scaleN(0)}rem`,
   margin: '0 auto',
   maxWidth: '120rem',
@@ -94,7 +101,7 @@ const theme = {
   menu: {
     padding: scale(2),
     opened: {
-      bg: colors.blackShades[0]
+      bg: colors.blueishGrey
     },
     closed: {
       bg: 'transparent'
@@ -110,7 +117,8 @@ const theme = {
       textAlign: 'left',
       color: colors.white,
       active: {
-        color: colors.yellow
+        color: colors.blueishGreyPalletePink
+		
       }
     },
     ul: {
@@ -262,12 +270,12 @@ const theme = {
   i18n: {
     selectLanguage: {
       li: {
-        margin: `-${scale(0)} 0 0 0`,
+        //margin: `-${scale(0)} 0 0 0`,
         padding: `${scale(5)} ${scale(-2)} ${scale(-5)} ${scale(-2)}`,
         fontSize: scale(3),
         borderRadius: '0.2rem',
         selected: {
-          backgroundColor: colors.gray
+          backgroundColor: colors.blueishGreyPaletteBlue
         }
       }
     }

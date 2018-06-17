@@ -6,21 +6,14 @@ import Welcome from './Welcome';
 import BtnLink from './BtnLink';
 import Technologies from './Resume/Technologies';
 import Games from './Resume/Games';
+import Link from './Link';
 import { FormattedMessage } from 'react-intl';
 import styled from 'styled-components';
 import { injectGlobal, css, keyframes } from 'styled-components';
 import Texture from './Texture.js'
+import Helmet from 'react-helmet';
 
 
-const TechnologiesSection = styled.div`
-  background-color: #004444;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  min-height: 100%;
-  overflow-x: hidden;
-`;
 
 const spacing = {
   quarter: "10px",
@@ -88,9 +81,16 @@ const SectionContents = styled.div`
   `}
   position: relative;
   z-index: 10;
-  background: 'white';
+  background-color: #21232d;
   box-shadow: 8px 8px rgba(0,0,0,0.15);
-  border-left: 40px solid #eee;
+  border-left: 40px solid #eeeeee;
+  width: 100%;
+  ${large`
+    > div {
+      width: calc( ( 100% - ${spacing.double} ) / 2 );
+    }
+    
+  `}
   &.section-intro-contents{
     border: none;
     ${small`
@@ -118,32 +118,31 @@ const Items = styled.div`
   `}
 `;
 
+
+
 const Index = (props) => {
   const posts = props.data.allMarkdownRemark.edges.map(p => p.node);
   const { langKey } = props.pathContext;
   const { pinnedTechnologies, games } = props.data.site.siteMetadata.resume;
 
+//E8710C
+  
   return (
     <div>
 		
-      <SocialLinks />
-	  <SectionBlock  style={{backgroundColor: '#D4773D'}}  >
-
+      
+	  <SectionBlock  style={{backgroundColor: '#266ABB'}}  >
 		<Texture className="svg-background" width={100} height={100} data={{}} />
 		<SectionContents>
-		
+			<SocialLinks />
 			<Welcome currentLangKey={langKey} />
 		</SectionContents>
 	  </SectionBlock>
       
-	  <SectionBlock  style={{backgroundColor: '#323C5D'}}  >
-
+	  <SectionBlock  style={{backgroundColor: '#48A6A7'}}  >
 		<Texture className="svg-background" width={100} height={100} data={{}} />
 		<SectionContents>
-			<Texture className="svg-background" width={100} height={100} data={{}}/>
-			  <Technologies
-				technologies={pinnedTechnologies}
-			  />
+			  <Technologies technologies={pinnedTechnologies} />
 			  <FormattedMessage id="resume.technologies.seeMore">
 				{(txt) => (
 				  <BtnLink to={`/${langKey}/resume/`}>
@@ -154,28 +153,23 @@ const Index = (props) => {
 		</SectionContents>
 	  </SectionBlock>
 	  
-	  <SectionBlock  style={{backgroundColor: '#85298B'}}  >
-
+	  <SectionBlock  style={{backgroundColor: '#423575'}}  >
 		<Texture className="svg-background" width={100} height={100} data={{}} />
 		<SectionContents>
 		  <Games games={games}>
 		  </Games>.
 		</SectionContents>
 	  </SectionBlock>
-	  
-      
-	  
-	  <SectionBlock  style={{backgroundColor: '#464A2C'}}  >
+	  	  
+	  <SectionBlock  style={{backgroundColor: '#C5C3A0'}}  >
 
 		<Texture className="svg-background" width={100} height={100} data={{}} />
-		<SectionContents>
-			
+		<SectionContents>			
 			<Posts
 			posts={posts}
 			langKey={langKey}
 			showBtnMorePosts
-			/>
-			
+			/>			
 		</SectionContents>
 	  </SectionBlock>
     </div>

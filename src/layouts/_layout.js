@@ -28,7 +28,7 @@ const BodyContainer = styled.div`
   font-family: ${props => props.theme.fontFamily};
   color: ${props => props.theme.color};
   background-color: ${props => props.theme.bg};
-  padding: ${props => props.theme.padding};
+  
   margin: ${props => props.theme.margin};
   max-width: ${props => props.theme.maxWidth};
 

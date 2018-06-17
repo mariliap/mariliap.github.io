@@ -6,6 +6,7 @@ import styled from 'styled-components';
 import Link from 'gatsby-link';
 import { endsWith } from 'ramda';
 import { injectIntl, FormattedMessage } from 'react-intl';
+import SelectLanguage from './SelectLanguage';
 
 const CloseNav = styled.section`
   ${props => props.isOpen
@@ -20,16 +21,20 @@ const CloseNav = styled.section`
 const Nav = styled.nav`
   text-align: center;
   position: fixed;
+  display:inline-block;
   top: 0;
-  right: calc(2rem - 100%);  
-  width: 100%;
-  z-index: 2;
+  left: 2rem;  
+  width: 8em;
+  z-index: 11;
+  border-right: ${props => props.isOpen 
+	? '40px solid #eeeeee'
+	: ''};
   padding: ${props => props.theme.menu.padding};
   transition-timing-function: ease-in, step-start, cubic-bezier(0.1, 0.7, 1.0, 0.1);
   
   ${props => props.isOpen
     ? `height: 100%;`
-    : `height: 4rem;`}; 
+    : `height: 2rem;`}; 
 
   transition: ${props => props.isOpen
     ? 'transform 1s, background-color 0.5s'
@@ -40,14 +45,28 @@ const Nav = styled.nav`
     : props.theme.menu.closed.bg};
 
   ${props => props.isOpen
-    ? 'transform: translateX(-60%);'
+    ? 'transform: translateX(+10%);'
     : ''};
 
   @media (min-width: ${props => props.theme.maxWidth}) {
     right: calc(-50% + -29rem);
   }
+  
 `;
 
+const Subnav = styled.nav`
+	display:inline-flex;
+	> * {
+    &:last-child {
+	   display: inline-flex;
+	   float: right;
+	   position: relative;
+	   transition: opacity 1s, transform 0.5s;
+	   transform: ${props => props.isOpen ? 'translateX(-4rem)' : ''};
+	   opacity: ${props => props.isOpen ? 1 : 0};
+    }
+  }
+`;
 const MenuLabel = styled.label`
   width: ${props => props.theme.menu.label.width};
   height: ${props => props.theme.menu.label.height};
@@ -98,7 +117,7 @@ const MenuA = MenuLink.withComponent(styled.a``);
 
 const Ul = styled.ul`
     display: block;
-    margin-top: ${props => props.theme.menu.ul.marginTop};
+    margin-top: -${props => props.theme.menu.ul.marginTop};
     margin-left: ${props => props.theme.menu.ul.marginLeft};
     list-style: none;
 
@@ -160,23 +179,29 @@ class Menu extends React.PureComponent {
     const { isOpen } = this.state;
     const isSelected = endsWith(this.props.url);
     const menuItems = this.getMenuItems(isSelected, this.props.menu, this.props.intl.locale);
-
+	const langs = this.props.langs;
+	
     return (
       <section>
         <CloseNav isOpen={isOpen} onClick={this.open} />
         <Nav isOpen={isOpen}>
-          <MenuLabel htmlFor="cb-menu">
-            <MenuIcon />
-            <InvisibleSpan>Menu</InvisibleSpan>
-            <Checkbox type="checkbox" name="cb-menu" id="cb-menu"
-              checked={this.state.isOpen}
-              onChange={this.open}
-            />
-          </MenuLabel>
-          <Ul isOpen={isOpen}>
-            {menuItems}
-          </Ul>
+		  <Subnav isOpen={isOpen} langs={langs}>
+			  <MenuLabel htmlFor="cb-menu">
+				<MenuIcon />
+				<InvisibleSpan>Menu</InvisibleSpan>
+				<Checkbox type="checkbox" name="cb-menu" id="cb-menu"
+				  checked={this.state.isOpen}
+				  onChange={this.open}/> 
+			  </MenuLabel>
+			  <SelectLanguage langs={langs} isOpen={isOpen} className="select-languages" />	
+		   </Subnav>
+		   <Ul isOpen={isOpen}>
+			  {menuItems}
+		   </Ul>
+		  
+		  
         </Nav>
+		
       </section>
     );
   }
