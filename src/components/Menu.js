@@ -61,16 +61,16 @@ const Subnav = styled.nav`
 	left: 0rem;
 	padding-left: ${props => props.theme.menu.padding};
 	> * {
-    &:last-child {
-	   display: flex;
-	   position: absolute;
-	   left:0;
-	   padding-left: ${props => props.theme.menu.padding};
-	   transition: opacity 1s, transform 0.5s;
-	   transform: ${props => props.isOpen ? 'translateX(-4rem)' : ''};
-	   opacity: ${props => props.isOpen ? 1 : 0};
+        &:last-child {
+           display: flex;
+           position: absolute;
+           left:0;
+           padding-left: ${props => props.theme.menu.padding};
+           transition: opacity 1s, transform 0.5s;
+           transform: ${props => props.isOpen ? 'translateX(-4rem)' : ''};
+           opacity: ${props => props.isOpen ? 1 : 0};
+        }
     }
-  }
 `;
 const MenuLabel = styled.label`
   z-index: 12;

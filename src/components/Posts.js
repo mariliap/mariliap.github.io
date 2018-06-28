@@ -4,7 +4,13 @@ import Link from './Link';
 import PostList from './PostList';
 import BtnLink from './BtnLink';
 import H2 from './H2';
+import H1 from './H1';
 import { FormattedMessage } from 'react-intl';
+import styled from 'styled-components';
+
+const SectionTop = styled.div`
+
+`
 
 const Posts = (props) => {
   const btnMorePosts = props.showBtnMorePosts
@@ -21,7 +27,7 @@ const Posts = (props) => {
 
   return (
     <section className="post-list">
-      <header>
+      <SectionTop>
         <Link to={`/${props.langKey}/blog/`}>
           <FormattedMessage id={props.title || 'posts'}>
             {(txt) => (
@@ -29,7 +35,7 @@ const Posts = (props) => {
             )}
           </FormattedMessage>
         </Link>
-      </header>
+      </SectionTop>
       <PostList {...props} />
       {btnMorePosts}
     </section>

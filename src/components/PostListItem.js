@@ -8,11 +8,16 @@ const Li = styled.li`
   padding: ${props => props.theme.blog.list.item.padding};
   margin: ${props => props.theme.blog.list.item.margin};
   transition: 0.3s;
-
-  &:hover {
-    background-color: ${props => props.theme.blog.list.item.hover.backgroundColor};
-    border-radius: ${props => props.theme.borderRadius};
-    transition: 0.3s;
+  &:hover{
+    > a {
+      > * {
+		color: ${props => props.theme.blog.list.item.p.hover.color};
+		&:last-child::after {
+					transform: scaleX(1);
+					transition-delay: 0s;
+		}
+	  }
+    }
   }
 `;
 
@@ -31,11 +36,44 @@ const Time = styled(CleanTime)`
   line-height: 1.2;
 `;
 
+const Title = styled.p`
+   padding: 0;
+   margin: ${props => props.theme.blog.list.item.p.margin};
+   font-size: ${props => props.theme.blog.list.item.header.fontSize};
+   line-height: ${props => props.theme.blog.list.item.header.lineHeight};
+   font-weight: ${props => props.theme.blog.list.item.header.fontWeight};
+   color: ${props => props.theme.blog.list.item.p.color};
+   
+   position: relative;
+   
+`;
+
 const P = styled.p`
   font-size: ${props => props.theme.blog.list.item.p.fontSize};
   margin: ${props => props.theme.blog.list.item.p.margin};
   padding: ${props => props.theme.blog.list.item.p.padding};
   line-height: ${props => props.theme.blog.list.item.p.lineHeight};
+  font-weight: ${props => props.theme.blog.list.item.p.fontWeight};
+  color: ${props => props.theme.blog.list.item.p.color};
+  display: inline-block;
+  text-decoration: none;
+  position: relative;
+  cursor: pointer;
+
+  &::after {
+    color: ${props => props.theme.blog.list.item.p.hover.color};
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 2px;
+	background-color: #57c7ff;
+	transform: scaleX(0);
+	transform-origin: left;
+	transition: transform 0.4s ease-in-out;
+	transition-delay: 0.1s;
+  }
 `;
 
 const PostListItem = ({ post }) => {
@@ -48,9 +86,10 @@ const PostListItem = ({ post }) => {
             langKey={post.fields.langKey}
             date={post.frontmatter.date}
           />
-          {post.frontmatter.title}
         </Header>
+		<Title>{post.frontmatter.title}</Title>
         <P>{post.excerpt}</P>
+		
       </Link>
     </Li>
   );

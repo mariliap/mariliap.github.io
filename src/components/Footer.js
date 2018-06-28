@@ -6,6 +6,7 @@ import FaGithub from 'react-icons/lib/fa/github';
 import A from './A';
 import styled from 'styled-components';
 import Ca from './flags/Ca';
+import Br from './flags/Br';
 
 const Link = styled(A)`
   display: inline-block;
@@ -21,8 +22,9 @@ const Link = styled(A)`
   transition: 0.3s;
   
   &:hover {
-    background-color: ${props => props.theme.colors.blackShades[0]};
+
     transition: 0.3s;
+
   }
 `;
 
@@ -49,7 +51,7 @@ const GithubIcon = styled(FaGithub)`
   padding: 0 ${({ theme }) => theme.scale(-6)} 0 0;
 `;
 
-const HomeCountryIcon = styled(Ca)`
+const HomeCountryIcon = styled(Br)`
   top: -0.1rem;
   position: relative;
   font-size: ${({ theme }) => theme.scale(2)};

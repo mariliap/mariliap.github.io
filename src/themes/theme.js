@@ -28,11 +28,20 @@ const colors = {
   blueishGreyPalleteBlueText:'#2895f2',
 
   blackShades: [
-    '#32342D'
+    '#32342D',
   ]
 };
 
-const fontFamily = '"Cambo", serif';
+const fontFamily = '"Space Mono", "monospace", sans-serif'; // '"Cambo", serif';
+
+const spacing = {
+  quarter: "10px",
+  half: "20px",
+  single: "40px",
+  double: "80px"
+}
+
+
 
 const theme = {
   scale,
@@ -65,7 +74,7 @@ const theme = {
     color: colors.white,
     textDecoration: 'none',
     hover: {
-      color: colors.yellow
+      color: colors.blueishGreyPalletePink
     }
   },
   header: {
@@ -149,15 +158,16 @@ const theme = {
     marginBottom: scale(2),
   },
   h1: {
-    fontSize: scale(6),
-    padding: `${scale(1)} 0 0 0`,
-    margin: `${scale(4)} 0 0 0`,
+    fontSize: scale(2),
+    padding: `0 0 0 0`,
+    margin: `${scale(1)} 0 0 0`,
     textAlign: 'center'
   },
   h2: {
-    fontSize: scale(4),
-    padding: `${scale(1)} 0 0 0`,
-    margin: `${scale(4)} 0 0 0`,
+
+    fontSize: scale(6),
+    padding: `0 0 0 0`,
+    margin: `${scale(1)} 0 0 0`,
     textAlign: 'center'
   },
   blog: {
@@ -168,8 +178,9 @@ const theme = {
         margin: `${scale(4)} 0 0 0`,
       },
       ul: {
-        padding: `0`,
-        margin: `0`,
+        padding: scale(4),
+        margin:  scale(6),
+        width: scale(10),
       },
       item: {
         padding: scale(2),
@@ -180,6 +191,7 @@ const theme = {
         header: {
           fontSize: scale(3),
           lineHeight: scaleN(1),
+          fontWeight: `bold`,
           time: {
             fontSize: scale(0),
             color: colors.blueishGreyPalleteBlueText
@@ -188,8 +200,31 @@ const theme = {
         p: {
           fontSize: scale(1),
           lineHeight: scaleN(2),
+          fontWeight: `normal`,
           padding: `0`,
           margin: `0`,
+		  
+		  color: `#57c7ff`,
+		  hover: { 
+			color: colors.blueishGreyPalletePink
+		  },
+		  display: `inline-block`,
+		  textDecoration: `none`,
+		  position: `relative`,
+		  cursor: `pointer`,
+		  after: {
+			content: '',
+			position: `absolute`,
+			bottom: `0`,
+			left: `0`,
+			width: `100%`,
+			height: `2px`,
+			backgroundColor: `#57c7ff`,
+			transform: `scaleX(0)`,
+			transformOrigin: `left`,
+			transition: `transform 0.4s ease-in-out`,
+			transitionDelay: `0.1s`
+		  },
         }
       }
     },
