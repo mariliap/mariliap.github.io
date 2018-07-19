@@ -132,7 +132,7 @@ const Index = (props) => {
 		
       
 	  <SectionBlock  style={{backgroundColor: '#266ABB'}}  >
-		<Texture className="svg-background" width={100} height={100} data={{}} />
+		<Texture className="svg-background" width={100} height={100} data={{}} index={3}/>
 		<SectionContents>
 			<SocialLinks />
 			<Welcome currentLangKey={langKey} />
@@ -140,7 +140,7 @@ const Index = (props) => {
 	  </SectionBlock>
       
 	  <SectionBlock  style={{backgroundColor: '#48A6A7'}}  >
-		<Texture className="svg-background" width={100} height={100} data={{}} />
+		<Texture className="svg-background" width={100} height={100} data={{}} index={1}/>
 		<SectionContents>
 			  <Technologies technologies={pinnedTechnologies} />
 			  <FormattedMessage id="resume.technologies.seeMore">
@@ -154,7 +154,7 @@ const Index = (props) => {
 	  </SectionBlock>
 	  
 	  <SectionBlock  style={{backgroundColor: '#423575'}}  >
-		<Texture className="svg-background" width={100} height={100} data={{}} />
+		<Texture className="svg-background" width={100} height={100} data={{}} index={2}/>
 		<SectionContents>
 		  <Games games={games}>
 		  </Games>.
@@ -163,7 +163,7 @@ const Index = (props) => {
 	  	  
 	  <SectionBlock  style={{backgroundColor: '#C5C3A0'}}  >
 
-		<Texture className="svg-background" width={100} height={100} data={{}} />
+		<Texture className="svg-background" width={100} height={100} data={{}} index={0}/>
 		<SectionContents>			
 			<Posts
 			posts={posts}

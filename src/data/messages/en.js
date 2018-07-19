@@ -1,5 +1,5 @@
 module.exports = {
-  'title': 'Marília Portela Web Apps Development and Training',
+  'title': 'Marília Portela SELF-IMPROVEMENT, POSITIVE IMPACT',
   'header.title': 'Marília Portela',
   'header.subTitle': 'Software engineer',
 

@@ -33,8 +33,8 @@ class Texture extends React.Component {
     let t
 
 	//switch(this.props.options.index) {
-	
-    switch(2) {
+	switch(this.props.index) {
+    //switch(2) {
 
       case 0: 
         t = textures.circles()
