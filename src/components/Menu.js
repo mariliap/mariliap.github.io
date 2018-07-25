@@ -160,7 +160,7 @@ class Menu extends React.PureComponent {
         : null;
 
       return (
-        <li>
+        <li key={item.slug}>
           <FormattedMessage id={item.label}>
             {(label) =>
               item.link

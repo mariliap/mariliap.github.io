@@ -27,6 +27,7 @@ export const pageQuery = graphql`
         author {
           name
           homeCity
+          homeCityLink
           email
           defaultLink
         }

@@ -6,7 +6,7 @@ module.exports = {
   author: {
     name: 'Marília Portela',
     homeCity: 'Fortaleza',
-	  homeCityLink: 'https://www.youtube.com/watch?v=yHQGUNmpJco&t=37s',
+	  homeCityLink: 'https://www.youtube.com/watch?v=yHQGUNmpJco',
     email: 'mariliaportela@gmail.com',
     defaultLink: 'https://github.com/mariliap'
   },

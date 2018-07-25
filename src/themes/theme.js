@@ -46,6 +46,7 @@ const spacing = {
 const theme = {
   scale,
   scaleN,
+	spacing,
   colors,
   fontFamily,
   color: colors.white,

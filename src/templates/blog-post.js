@@ -10,6 +10,8 @@ import CleanTime from '../components/Time';
 import Comments from '../components/Comments';
 import Posts from '../components/Posts';
 import AnchorJS from 'anchor-js';
+import Texture from '../components/Texture';
+import { injectGlobal, css, keyframes } from 'styled-components';
 
 const Time = styled(CleanTime)`
   text-align: center;
@@ -21,9 +23,60 @@ const Time = styled(CleanTime)`
   padding-top: 1rem;
 `;
 
-const Post = styled.article`
-  margin: ${props => props.theme.blog.post.margin};
-  padding: ${props => props.theme.blog.post.padding};
+const small = (...args) => css`
+  @media screen and (max-width: 600px) {
+    ${ css(...args) }
+  }
+`
+const medium = (...args) => css`
+  @media screen and (min-width: 601px) and (max-width: 1200px) {
+    ${ css(...args) }
+  }
+`
+const large = (...args) => css`
+  @media screen and (min-width: 1201px) {
+    ${ css(...args) }
+  }
+`
+
+const PostBlock = styled.article`
+  // margin: ${props => props.theme.blog.post.margin};
+  // padding: ${props => props.theme.blog.post.padding};
+  ${small`
+    padding: 10px 10px 10px 10px;
+  `}
+  ${medium`
+    padding: 20px 80px 20px 80px;
+    min-height: 100vh;
+  `}
+  ${large`
+    padding: 40px 120px 40px 120px;
+    min-height: 100vh;
+  `}
+   flex: 1;
+   display: flex;
+   align-items: center;
+   position: relative;
+   background-color: ${props => props.theme.colors.blueishGreyPaletteSand};
+   
+`;
+
+const Post = styled.div`
+  ${small`
+    padding: ${props => props.theme.spacing.half} ${props => props.theme.spacing.half};
+  `}
+  ${medium`
+    padding: ${props => props.theme.spacing.single} ${props => props.theme.spacing.double};
+  `}
+  ${large`
+    padding: ${props => props.theme.spacing.single} ${props => props.theme.spacing.double};
+  `}
+  position: relative;
+  z-index: 10;
+  background-color: ${props => props.theme.colors.blueishGrey};
+  box-shadow: 8px 8px rgba(0,0,0,0.15);
+  border-left: 40px solid #eeeeee;
+  width: 100%;  
 `;
 
 const H1 = styled.h1`
@@ -34,7 +87,39 @@ const H1 = styled.h1`
 
 const Content = styled.section`
   margin: 0 0 ${({ theme }) => theme.scale(6)} 0;
-
+  // ${small`
+  //   padding:  ${props => props.theme.spacing.half} ${props => props.theme.spacing.half};
+  // `}
+  // ${medium`
+  //   padding: ${props => props.theme.spacing.single} ${props => props.theme.spacing.double}; 
+  // `}
+  // ${large`
+  //   padding: ${props => props.theme.spacing.single} ${props => props.theme.spacing.double}; 
+  // `}
+  // position: relative;
+  // z-index: 10;
+  // background-color: ${props => props.theme.colors.blueishGrey};
+  // box-shadow: 8px 8px rgba(0,0,0,0.15);
+  // border-left: 40px solid #eeeeee;
+  // width: 100%;
+  // ${large`
+  //   > div {
+  //     width: calc( ( 100% -  ${props => props.theme.spacing.double} ) / 2 );
+  //   }
+  // `};
+  // &.section-intro-contents{
+  //   border: none;
+  //   ${small`
+  //     padding: ${props => props.theme.spacing.double} ${props => props.theme.spacing.half} ${props => props.theme.spacing.half} ${props => props.theme.spacing.half};
+  //   `}
+  //   ${medium`
+  //     padding: ${props => props.theme.spacing.double} ${props => props.theme.spacing.single} ${props => props.theme.spacing.single} ${props => props.theme.spacing.single};
+  //   `}
+  //   ${large`
+  //     padding: ${props => props.theme.spacing.double} ${props => props.theme.spacing.double};
+  //   `}
+  // };  
+  
   p > code {
     color: ${props => props.theme.blog.post.content.code.color};
     font-size: ${props => props.theme.blog.post.content.code.fontSize};
@@ -226,46 +311,49 @@ class BlogPostRoute extends React.PureComponent {
     );
   
     return (
-      <Post>
-        <Helmet
-          title={`${markdownRemark.frontmatter.title}`}
-          meta={[{ name: 'description', content: markdownRemark.excerpt }]}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: structuredData }}
-        />
-        <header>
-          <H1>
-            {markdownRemark.frontmatter.title}
-          </H1>
-          <Time
-            pubdate
-            date={markdownRemark.frontmatter.date}
-            langKey={langKey}
+      <PostBlock>
+	      <Texture className="svg-background" width={100} height={100} data={{}} index={0}/>
+        <Post>
+          <Helmet
+            title={`${markdownRemark.frontmatter.title}`}
+            meta={[{ name: 'description', content: markdownRemark.excerpt }]}
           />
-        </header>
-        <EditBtn
-          fileAbsolutePath={markdownRemark.fileAbsolutePath}
-          currentLangKey={langKey}
-        />
-        {tags}
-        {youtube}
-        <Content dangerouslySetInnerHTML={{ __html: markdownRemark.html }} />
-        <Comments
-          shortname="angeloocana-com"
-          identifier={markdownRemark.fields.slug}
-          title={markdownRemark.frontmatter.title}
-          url={url}
-        />
-        {tags}
-        <Posts
-          posts={markdownRemark.fields.readNextPosts}
-          langKey={langKey}
-          showBtnMorePosts
-          title="posts.readNext"
-        />
-      </Post>
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: structuredData }}
+          />
+          <header>
+            <H1>
+              {markdownRemark.frontmatter.title}
+            </H1>
+            <Time
+              pubdate
+              date={markdownRemark.frontmatter.date}
+              langKey={langKey}
+            />
+          </header>
+          <EditBtn
+            fileAbsolutePath={markdownRemark.fileAbsolutePath}
+            currentLangKey={langKey}
+          />
+          {tags}
+          {youtube}
+          <Content dangerouslySetInnerHTML={{ __html: markdownRemark.html }} />
+          <Comments
+            shortname="angeloocana-com"
+            identifier={markdownRemark.fields.slug}
+            title={markdownRemark.frontmatter.title}
+            url={url}
+          />
+          {tags}
+          <Posts
+            posts={markdownRemark.fields.readNextPosts}
+            langKey={langKey}
+            showBtnMorePosts
+            title="posts.readNext"
+          />
+        </Post>
+      </PostBlock>
     );
   }
 }

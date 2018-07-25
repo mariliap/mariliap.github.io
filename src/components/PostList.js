@@ -27,7 +27,7 @@ const Ul = styled.ul`
 
 const ScrollableDiv = styled.div`
     height: 50vh;
-    overflow-y: scroll;
+    overflow-y: auto;
     // ::-webkit-scrollbar{
     //     color: blue;
     // };
