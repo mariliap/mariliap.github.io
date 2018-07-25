@@ -52,8 +52,7 @@ const Wrapper = (props) => {
     <ThemeProvider theme={theme}>
       <IntlProvider 
         locale={langKey} 
-        messages={props.i18nMessages}
-      >
+        messages={props.i18nMessages}>
         <Background>
           <BodyContainer>
             <Header

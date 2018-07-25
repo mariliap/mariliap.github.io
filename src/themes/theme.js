@@ -39,7 +39,7 @@ const spacing = {
   half: "20px",
   single: "40px",
   double: "80px"
-}
+};
 
 
 
@@ -194,7 +194,7 @@ const theme = {
           fontWeight: `bold`,
           time: {
             fontSize: scale(0),
-            color: colors.blueishGreyPalleteBlueText
+            color: colors.blueishGreyPaletteSand
           }
         },
         p: {
@@ -203,28 +203,30 @@ const theme = {
           fontWeight: `normal`,
           padding: `0`,
           margin: `0`,
-		  
-		  color: `#57c7ff`,
-		  hover: { 
-			color: colors.blueishGreyPalletePink
-		  },
-		  display: `inline-block`,
-		  textDecoration: `none`,
-		  position: `relative`,
-		  cursor: `pointer`,
-		  after: {
-			content: '',
-			position: `absolute`,
-			bottom: `0`,
-			left: `0`,
-			width: `100%`,
-			height: `2px`,
-			backgroundColor: `#57c7ff`,
-			transform: `scaleX(0)`,
-			transformOrigin: `left`,
-			transition: `transform 0.4s ease-in-out`,
-			transitionDelay: `0.1s`
-		  },
+
+          // color: `#57c7ff`,
+          color: colors.blueishGreyPalleteBlueText,
+          hover: {
+            color: colors.blueishGreyPalletePink
+          },
+          display: `inline-block`,
+          textDecoration: `none`,
+          position: `relative`,
+          cursor: `pointer`,
+          after: {
+            content: '',
+            position: `absolute`,
+            bottom: `0`,
+            left: `0`,
+            width: `100%`,
+            height: `2px`,
+            //backgroundColor: `#57c7ff`,
+	          backgroundColor: colors.blueishGreyPaletteSand,
+            transform: `scaleX(0)`,
+            transformOrigin: `left`,
+            transition: `transform 0.4s ease-in-out`,
+            transitionDelay: `0.1s`
+		      },
         }
       }
     },

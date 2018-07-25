@@ -62,17 +62,17 @@ const P = styled.p`
 
   &::after {
     color: ${props => props.theme.blog.list.item.p.hover.color};
-	content: '';
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	width: 100%;
-	height: 2px;
-	background-color: #57c7ff;
-	transform: scaleX(0);
-	transform-origin: left;
-	transition: transform 0.4s ease-in-out;
-	transition-delay: 0.1s;
+	  content: '';
+	  position: absolute;
+	  bottom: 0;
+	  left: 0;
+	  width: 100%;
+	  height: 2px;
+	  background-color: ${props => props.theme.blog.list.item.p.after.backgroundColor};
+	  transform: scaleX(0);
+	  transform-origin: left;
+	  transition: transform 0.4s ease-in-out;
+	  transition-delay: 0.1s;
   }
 `;
 

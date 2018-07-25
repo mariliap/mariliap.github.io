@@ -1,8 +1,8 @@
 {
-  "name": "angeloocana",
-  "description": "Angelo Ocana Web Apps Development and Training",
+  "name": "mariliaportela",
+  "description": "Marília Portela Software Development",
   "version": "1.0.0",
-  "author": "Angelo Ocana <angeloocana@gmail.com>",
+  "author": "Marília Portela mariliaportela@gmail.com>",
   "dependencies": {
     "@types/jest": "^23.0.0",
     "anchor-js": "^4.1.0",

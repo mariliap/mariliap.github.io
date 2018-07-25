@@ -43,7 +43,7 @@ module.exports = {
 
   'resume.educations': 'Éducation',
 
-  'resume.games': 'Jeux',
+  'resume.games': 'Projets',
 
   'resume.languages': 'Langues',
   'resume.languages.level.native': 'Natif',

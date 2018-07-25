@@ -7,14 +7,30 @@ import A from './A';
 import styled from 'styled-components';
 import Ca from './flags/Ca';
 import Br from './flags/Br';
+import Texture from './Texture.js';
+
+const FooterMain = styled.footer`
+    position: relative;
+    display: flex;
+`;
+
+const FooterSection = styled.section`
+	z-index: 10;
+	color:  ${props => props.theme.colors.blueishGreyPaletteBlue};
+  text-align: center;
+  display: block;
+  margin: auto;
+  span {
+    font-weight: bold;
+  }
+`;
 
 const Link = styled(A)`
   display: inline-block;
-
-  padding-top: ${({theme}) => theme.scale(6)};
-  padding-bottom: ${({theme}) => theme.scale(7)};
-  padding-right: ${({theme}) => theme.scale(0)};
-  padding-left: ${({theme}) => theme.scale(0)};
+  color:  ${props => props.theme.colors.blueishGreyPaletteBlue};
+  
+  padding-top: ${({theme}) => theme.scale(0.5)};
+  padding-bottom: ${({theme}) => theme.scale(0)};
   margin: 0;
 
   line-height: 1.5;
@@ -28,27 +44,18 @@ const Link = styled(A)`
   }
 `;
 
-const FooterSection = styled.section`
-  text-align: center;
-  
-  span {
-    font-weight: bold;
-  }
-`;
-
 const ProfilePicture = styled(Gravatar)`
-  display: block;
+  width: 2em;
+  height: 2em;
+  display: inline-block;
   margin: auto;
+  vertical-align: middle;
   border-radius: 50%;
-  margin-bottom: 1rem;
 `;
 
 const GithubIcon = styled(FaGithub)`
   font-size: ${({ theme }) => theme.scale(4)};
   display: inline-block;
-  margin: auto;
-  margin: 0;
-  padding: 0 ${({ theme }) => theme.scale(-6)} 0 0;
 `;
 
 const HomeCountryIcon = styled(Br)`
@@ -58,78 +65,84 @@ const HomeCountryIcon = styled(Br)`
   margin-left: ${({ theme }) => theme.scale(-6)};
 `;
 
-const getGitHubMsg = () => {
+const getGitHubMsg = (txt) => {
+	return (
+		<p>
+			<GithubIcon/>
+			<span>{txt}</span>
+		</p>
+
+	);
+};
+
+
+const getCreatedBy = (author, sourceCodeLink) => {
+  const profilePicture = (<ProfilePicture email={author.email} alt={author.name}  default={"monsterid"}/>);
   return {
     en: (
-      <p>
-        <GithubIcon />
-        <span>OPEN SOURCE</span>!
-      </p>
+      <FooterSection>
+	      <Link href={sourceCodeLink} target="_blank">
+		      {getGitHubMsg('OPEN SOURCE')}
+	      </Link>
+        {', built with '} <HeartIcon />
+        {' by '}
+	      <Link href={author.defaultLink} target="_blank">
+		      <span>{author.name} </span>
+	        {profilePicture}
+	      </Link>
+	      {' who lives in '}
+	      <Link href={author.homeCityLink} target="_blank">
+		      <span>{author.homeCity}</span>
+	        <HomeCountryIcon />
+	      </Link>
+      </FooterSection>
     ),
     pt: (
-      <p>
-        <GithubIcon />
-        <span>OPEN SOURCE</span>!
-      </p>
+      <FooterSection>
+	      <Link href={sourceCodeLink} target="_blank">
+		      {getGitHubMsg('OPEN SOURCE')}
+	      </Link>
+	      {', criado com '} <HeartIcon />
+	      {' por '}
+        <Link href={author.defaultLink} target="_blank">
+          <span>{author.name} </span>
+	        {profilePicture}
+        </Link>
+	      {' que mora em '}
+	      <Link href={author.homeCityLink} target="_blank">
+		      <span>{author.homeCity}</span>
+		      <HomeCountryIcon />
+	      </Link>
+      </FooterSection>
     ),
     fr: (
-      <p>
-        <GithubIcon />
-        <span>SOURCE OUVERTE</span>!
-      </p>
+      <FooterSection>
+	      <Link href={sourceCodeLink} target="_blank">
+		      {getGitHubMsg('SOURCE OUVERTE')}
+	      </Link>
+	      {', créé avec '} <HeartIcon />
+	      {' par '}
+	      <Link href={author.defaultLink} target="_blank">
+		      <span>{author.name} </span>
+		      {profilePicture}
+	      </Link>
+	      {' qui vit à '}
+	      <Link href={author.homeCityLink} target="_blank">
+		      <span>{author.homeCity}</span>
+		      <HomeCountryIcon />
+	      </Link>
+      </FooterSection>
     )
   };
 };
 
-const getCreatedBy = (author) => {
-  const profilePicture = (<ProfilePicture email={author.email} alt={author.name} width={60} height={60} />);
-  return {
-    en: (
-      <FooterSection>
-        <Link href={author.defaultLink} target="_blank">
-          {profilePicture}
-          {'Built with '} <HeartIcon />
-          {' by '} <span>{author.name}</span>
-          {' who lives in '} <span>{author.homeCity}</span>
-          <HomeCountryIcon />
-        </Link>
-      </FooterSection>
-    ),
-    pt: (
-      <FooterSection>
-        <Link href={author.defaultLink} target="_blank">
-          {profilePicture}
-          {'Criado com '} <HeartIcon />
-          {' por '} <span>{author.name}</span>
-          {' que mora em '} <span>{author.homeCity}</span>
-          <HomeCountryIcon />
-        </Link>
-      </FooterSection>
-    ),
-    fr: (
-      <FooterSection>
-        <Link href={author.defaultLink} target="_blank">
-          {profilePicture}
-          {'Créé avec '} <HeartIcon />
-          {' par '} <span>{author.name}</span>
-          {' qui vit à '} <span>{author.homeCity}</span>
-          <HomeCountryIcon />
-        </Link>
-      </FooterSection>
-    )
-  };
-};
 
 const Footer = ({ author, sourceCodeLink, currentLangKey }) => {
   return (
-    <footer>
-      {getCreatedBy(author)[currentLangKey]}
-      <FooterSection>
-        <Link href={sourceCodeLink} target="_blank">
-          {getGitHubMsg()[currentLangKey]}
-        </Link>
-      </FooterSection>
-    </footer>
+    <FooterMain>
+	    <Texture className="svg-background" width={100} height={100} data={{}} index={6}/>
+      {getCreatedBy(author, sourceCodeLink)[currentLangKey]}
+    </FooterMain>
   );
 };
 

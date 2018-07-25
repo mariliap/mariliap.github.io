@@ -26,7 +26,7 @@ const Figure = styled.figure`
   text-align: center;
 `;
 
-const Game = (props) => {
+const Code = (props) => {
   const { link, name, img } = props;
 
   return (
@@ -43,10 +43,10 @@ const Game = (props) => {
   );
 };
 
-Game.propTypes = {
+Code.propTypes = {
   name: PropTypes.string.isRequired,
   img: PropTypes.string.isRequired,
   link: PropTypes.string.isRequired
 };
 
-export default Game;
+export default Code;

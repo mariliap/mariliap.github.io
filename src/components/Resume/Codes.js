@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import H2 from '../H2';
-import Game from './Game';
+import Code from './Code';
 import { FormattedMessage } from 'react-intl';
 
 const Ul = styled.ul`
@@ -13,7 +13,7 @@ const Ul = styled.ul`
   padding: 0;
 `;
 
-const Games = ({ games }) => {
+const Codes = ({ games }) => {
   return (
     <section>
       <header>
@@ -28,7 +28,7 @@ const Games = ({ games }) => {
       <Ul>
         {
           games.map((game, i) =>
-            <Game
+            <Code
               key={i}
               {...game}
             />
@@ -39,8 +39,8 @@ const Games = ({ games }) => {
   );
 };
 
-Games.propTypes = {
+Codes.propTypes = {
   games: PropTypes.array.isRequired
 };
 
-export default Games;
+export default Codes;

@@ -8,12 +8,12 @@ const large = (...args) => css`
   @media screen and (min-width: 1201px) {
     ${ css(...args) }
   }
-`
+`;
 
 const Ul = styled.ul`
   //list-style: none;
   //margin: ${props => props.theme.blog.list.ul.margin};
-  padding-top: ${props => props.theme.blog.list.ul.padding};
+  padding-bottom: ${props => props.theme.blog.list.ul.padding};
   display: flex;
   flex-wrap: wrap;
   > * {
@@ -25,16 +25,26 @@ const Ul = styled.ul`
   }
 `;
 
+const ScrollableDiv = styled.div`
+    height: 50vh;
+    overflow-y: scroll;
+    // ::-webkit-scrollbar{
+    //     color: blue;
+    // };
+`;
 
 const PostList = (props) => {
   return (
-    <nav>
-      <Ul>
-        {props.posts.map(post =>
-          <PostListItem post={post} />
-        )}
-      </Ul>
-    </nav>
+      //style={{height: '50vh', overflowY: 'scroll'}}
+      <ScrollableDiv>
+        <nav>
+          <Ul>
+            {props.posts.map(post =>
+              <PostListItem post={post} />
+            )}
+          </Ul>
+        </nav>
+      </ScrollableDiv>
   );
 };
 

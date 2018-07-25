@@ -9,8 +9,8 @@ import { FormattedMessage } from 'react-intl';
 import styled from 'styled-components';
 
 const SectionTop = styled.div`
-
-`
+    margin-bottom: ${props => props.theme.blog.list.ul.margin};
+`;
 
 const Posts = (props) => {
   const btnMorePosts = props.showBtnMorePosts
@@ -36,8 +36,8 @@ const Posts = (props) => {
           </FormattedMessage>
         </Link>
       </SectionTop>
-      <PostList {...props} />
-      {btnMorePosts}
+      <PostList {...props}/>
+     {/*{btnMorePosts}*/}
     </section>
   );
 };

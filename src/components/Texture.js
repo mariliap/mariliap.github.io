@@ -97,7 +97,7 @@ class Texture extends React.Component {
         t = textures.paths()
           .d("crosses")
           .lighter()
-          .stroke("rgba(255,255,255,0.1)")
+          .stroke("rgba(255,255,255,0.08)")
           .size(20)
       break
     }

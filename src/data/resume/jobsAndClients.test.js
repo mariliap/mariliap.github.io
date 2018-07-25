@@ -34,7 +34,7 @@ describe('data jobsAndClients', () => {
     assert.deepEqual(errors, []);
   });
 
-  it('2 Games', () => {
+  it('2 Codes', () => {
     assert.equal(games.length, 2, 'Did u add a new game? Just update the test');
   });
 });

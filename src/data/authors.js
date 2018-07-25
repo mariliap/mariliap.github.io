@@ -1,27 +1,20 @@
 const authors = {
   angeloocana: {
-    name: 'Angelo Ocana Martins',
-    additionalName: 'angeloocana',
-    address: 'Ottawa CA',
+    name: 'Marília Portela de Lima',
+    additionalName: 'mariliaportela',
+    address: 'Fortaleza BR',
     affiliation: 'Polutz',
     birthDate: '1992-06-28',
-    birthPlace: 'Carapicúiba BR',
-    brand: 'Ângelo Ocanã Web Apps Development and Training',
+    birthPlace: 'Recife BR',
+    brand: 'Marília Portela Software Development',
     children: {
-      additionalName: 'Ana Julia Rodriguez Ocana',
-      name: 'Ana Júlia Rodriguez Ocanã',
-      givenName: 'Ana Julia',
-      familyName: 'Ocanã',
-      gender: 'Female',
-      nationality: 'Brazilian',
-      homeLocation: 'Ottawa'
     },
-    email: 'angeloocana@gmail.com',
-    familyName: 'Ocanã',
-    gender: 'Male',
+    email: 'mariliaportela@gmail.com',
+    familyName: '...',
+    gender: 'Female',
     givenName: 'Angelo',
     height: '...',
-    homeLocation: 'Ottawa',
+    homeLocation: 'Fortaleza',
     jobTitle: 'Software Engineer',
     knows: '...',
     memberOf: '...',
@@ -34,13 +27,13 @@ const authors = {
     seeks: '...',
     sibling: '...',
     spouse: {
-      additionalName: 'Gabriela Rodriguez de Almeida',
-      name: 'Gabriela Rodriguez de Almeida',
-      givenName: 'Gabriela',
-      familyName: 'Rodriguez',
-      gender: 'Female',
-      nationality: 'Brazilian',
-      homeLocation: 'Ottawa'
+      additionalName: '...',
+      name: '...',
+      givenName: '...',
+      familyName: '...',
+      gender: '...',
+      nationality: '...',
+      homeLocation: '...'
     },
     telephone: '...',
     weight: '...',
@@ -50,8 +43,8 @@ const authors = {
     disambiguatingDescription: '...',
     identifier: '...',
     image: 'http://www.gravatar.com/avatar/9174fca44b5ca403593ac9cb2407e0e7',
-    sameAs: 'https://angeloocana.com/en/about/',
-    url: 'https://angeloocana.com/en/about/'
+    sameAs: 'https://mariliaportela.com/en/about/',
+    url: 'https:///mariliaportela.com/en/about/'
   }
 };
 

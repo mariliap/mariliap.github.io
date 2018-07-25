@@ -5,7 +5,7 @@ import SocialLinks from './SocialLinks';
 import Welcome from './Welcome';
 import BtnLink from './BtnLink';
 import Technologies from './Resume/Technologies';
-import Games from './Resume/Games';
+import Codes from './Resume/Codes';
 import Link from './Link';
 import { FormattedMessage } from 'react-intl';
 import styled from 'styled-components';
@@ -156,15 +156,15 @@ const Index = (props) => {
 	  <SectionBlock  style={{backgroundColor: '#423575'}}  >
 		<Texture className="svg-background" width={100} height={100} data={{}} index={2}/>
 		<SectionContents>
-		  <Games games={games}>
-		  </Games>.
+		  <Codes games={games}>
+		  </Codes>
 		</SectionContents>
 	  </SectionBlock>
 	  	  
 	  <SectionBlock  style={{backgroundColor: '#C5C3A0'}}  >
 
 		<Texture className="svg-background" width={100} height={100} data={{}} index={0}/>
-		<SectionContents>			
+		<SectionContents>
 			<Posts
 			posts={posts}
 			langKey={langKey}

@@ -6,6 +6,7 @@ module.exports = {
   author: {
     name: 'Marília Portela',
     homeCity: 'Fortaleza',
+	  homeCityLink: 'https://www.youtube.com/watch?v=yHQGUNmpJco&t=37s',
     email: 'mariliaportela@gmail.com',
     defaultLink: 'https://github.com/mariliap'
   },
@@ -44,7 +45,7 @@ module.exports = {
     },
     {
       type: 'phone',
-      value: '+55 81 99526-7578',
+      value: '+55 85 98992-8824',
       country: 'br',
       link: 'tel:+55 85 998992-8824'
     }
