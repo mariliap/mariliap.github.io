@@ -186,28 +186,26 @@ class Menu extends React.PureComponent {
     const { isOpen } = this.state;
     const isSelected = endsWith(this.props.url);
     const menuItems = this.getMenuItems(isSelected, this.props.menu, this.props.intl.locale);
-	const langs = this.props.langs;
+		const langs = this.props.langs;
 	
     return (
       <section>
         <CloseNav isOpen={isOpen} onClick={this.open} />
         <Nav isOpen={isOpen}>
-		  <Subnav isOpen={isOpen} langs={langs}>
-			  <MenuLabel htmlFor="cb-menu">
-				<MenuIcon />
-				<InvisibleSpan>Menu</InvisibleSpan>
-				<Checkbox type="checkbox" name="cb-menu" id="cb-menu"
-				  checked={this.state.isOpen}
-				  onChange={this.open}/> 
-			  </MenuLabel>
-			  <SelectLanguage langs={langs} isOpen={isOpen} className="select-languages" />	
-		   </Subnav>
-		   <Ul isOpen={isOpen}>
-			  {menuItems}
-		   </Ul>
-		  
-		  
-        </Nav>
+				  <Subnav isOpen={isOpen} langs={langs}>
+					  <MenuLabel htmlFor="cb-menu">
+							<MenuIcon />
+							<InvisibleSpan>Menu</InvisibleSpan>
+							<Checkbox type="checkbox" name="cb-menu" id="cb-menu"
+						    checked={this.state.isOpen}
+						    onChange={this.open}/>
+					    </MenuLabel>
+					  <SelectLanguage langs={langs} isOpen={isOpen} className="select-languages" />
+				  </Subnav>
+	        <Ul isOpen={isOpen}>
+					  {menuItems}
+					</Ul>
+				</Nav>
 		
       </section>
     );

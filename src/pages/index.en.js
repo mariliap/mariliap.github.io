@@ -38,7 +38,7 @@ export const pageQuery = graphql`
             years,
             img
           }
-          games{
+          projects{
             name,
             link,
             img

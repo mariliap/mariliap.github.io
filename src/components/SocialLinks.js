@@ -1,9 +1,10 @@
 import React from 'react';
 import GithubIcon from 'react-icons/lib/fa/github';
-import YoutubeIcon from 'react-icons/lib/fa/youtube';
-import FacebookIcon from 'react-icons/lib/fa/facebook-square';
-import TwitterIcon from 'react-icons/lib/fa/twitter';
-import PluralsightIcon from '../imgs/pluralsightIcon';
+import LinkedinIcon from 'react-icons/lib/fa/linkedin';
+// import YoutubeIcon from 'react-icons/lib/fa/youtube';
+// import FacebookIcon from 'react-icons/lib/fa/facebook-square';
+// import TwitterIcon from 'react-icons/lib/fa/twitter';
+// import PluralsightIcon from '../imgs/pluralsightIcon';
 import styled from 'styled-components';
 
 const Ul = styled.ul`
@@ -47,26 +48,31 @@ const SocialLinks = () => {
             <GithubIcon />Github
           </A>
         </li>
-        <li>
-          <A href="https://pluralsight.com/profile/ocanaangelo" target="_blank">
-            <PluralsightIcon />Pluralsight
-          </A>
-        </li>
-        <li>
-          <A href="https://youtube.com/ocanaangelo" target="_blank">
-            <YoutubeIcon />Youtube
-          </A>
-        </li>
-        <li>
-          <A href="https://facebook.com/angeloocanadev" target="_blank">
-            <FacebookIcon />Facebook
-          </A>
-        </li>
-        <li>
-          <A href="https://twitter.com/ocanaangelo" target="_blank">
-            <TwitterIcon />Twitter
-          </A>
-        </li>
+	      <li>
+		      <A href="https://github.com/angeloocana" target="_blank">
+			      <LinkedinIcon />Linkedin
+		      </A>
+	      </li>
+        {/*<li>*/}
+          {/*<A href="https://pluralsight.com/profile/ocanaangelo" target="_blank">*/}
+            {/*<PluralsightIcon />Pluralsight*/}
+          {/*</A>*/}
+        {/*</li>*/}
+        {/*<li>*/}
+          {/*<A href="https://youtube.com/ocanaangelo" target="_blank">*/}
+            {/*<YoutubeIcon />Youtube*/}
+          {/*</A>*/}
+        {/*</li>*/}
+        {/*<li>*/}
+          {/*<A href="https://facebook.com/angeloocanadev" target="_blank">*/}
+            {/*<FacebookIcon />Facebook*/}
+          {/*</A>*/}
+        {/*</li>*/}
+        {/*<li>*/}
+          {/*<A href="https://twitter.com/ocanaangelo" target="_blank">*/}
+            {/*<TwitterIcon />Twitter*/}
+          {/*</A>*/}
+        {/*</li>*/}
       </Ul>
     </section>
   );

@@ -123,55 +123,53 @@ const Items = styled.div`
 const Index = (props) => {
   const posts = props.data.allMarkdownRemark.edges.map(p => p.node);
   const { langKey } = props.pathContext;
-  const { pinnedTechnologies, games } = props.data.site.siteMetadata.resume;
+  const { pinnedTechnologies, projects } = props.data.site.siteMetadata.resume;
 
-//E8710C
-  
   return (
     <div>
-		
+	    <SectionBlock  style={{backgroundColor: '#266ABB'}}  >
+				<Texture className="svg-background" width={'100%'} height={'100%'} data={{}} index={3}/>
+				<SectionContents>
+					<SocialLinks />
+					<Welcome currentLangKey={langKey} />
+				</SectionContents>
+	    </SectionBlock>
       
-	  <SectionBlock  style={{backgroundColor: '#266ABB'}}  >
-		<Texture className="svg-background" width={100} height={100} data={{}} index={3}/>
-		<SectionContents>
-			<SocialLinks />
-			<Welcome currentLangKey={langKey} />
-		</SectionContents>
-	  </SectionBlock>
-      
-	  <SectionBlock  style={{backgroundColor: '#48A6A7'}}  >
-		<Texture className="svg-background" width={100} height={100} data={{}} index={1}/>
-		<SectionContents>
-			  <Technologies technologies={pinnedTechnologies} />
-			  <FormattedMessage id="resume.technologies.seeMore">
-				{(txt) => (
-				  <BtnLink to={`/${langKey}/resume/`}>
-					{txt}
-				  </BtnLink>
-				)}
-			  </FormattedMessage>
-		</SectionContents>
-	  </SectionBlock>
+		  <SectionBlock  style={{backgroundColor: '#48A6A7'}}  >
+				<Texture className="svg-background" width={'100%'} height={'100%'} data={{}} index={1}/>
+				<SectionContents>
+					<Technologies technologies={pinnedTechnologies} />
+					<FormattedMessage id="resume.technologies.seeMore">
+						{(txt) => (
+						  <BtnLink to={`/${langKey}/resume/`}>
+							{txt}
+						  </BtnLink>
+						)}
+					</FormattedMessage>
+				</SectionContents>
+		  </SectionBlock>
 	  
-	  <SectionBlock  style={{backgroundColor: '#423575'}}  >
-		<Texture className="svg-background" width={100} height={100} data={{}} index={2}/>
-		<SectionContents>
-		  <Codes games={games}>
-		  </Codes>
-		</SectionContents>
-	  </SectionBlock>
-	  	  
-	  <SectionBlock  style={{backgroundColor: '#C5C3A0'}}  >
+		  <SectionBlock  style={{backgroundColor: '#423575'}}  >
+				<Texture className="svg-background" width={'100%'} height={'100%'} data={{}} index={2}/>
+				<SectionContents>
+					http://graphicdesignjunction.com/2013/10/free-fonts-for-creative-designers/
 
-		<Texture className="svg-background" width={100} height={100} data={{}} index={0}/>
-		<SectionContents>
-			<Posts
-			posts={posts}
-			langKey={langKey}
-			showBtnMorePosts
-			/>			
-		</SectionContents>
-	  </SectionBlock>
+					http://www.heropatterns.com/
+				  <Codes projects={projects}>
+				  </Codes>
+				</SectionContents>
+		  </SectionBlock>
+	  	  
+		  <SectionBlock  style={{backgroundColor: '#C5C3A0'}}  >
+				<Texture className="svg-background" width={'100%'} height={'100%'} data={{}} index={0}/>
+					<SectionContents>
+						<Posts
+							posts={posts}
+							langKey={langKey}
+							showBtnMorePosts
+						/>
+					</SectionContents>
+		  </SectionBlock>
     </div>
   );
 };

@@ -13,11 +13,11 @@ const Ul = styled.ul`
   padding: 0;
 `;
 
-const Codes = ({ games }) => {
+const Codes = ({ projects }) => {
   return (
     <section>
       <header>
-        <FormattedMessage id="resume.games">
+        <FormattedMessage id="resume.projects">
           {(txt) => (
             <H2>
               {txt}
@@ -27,7 +27,7 @@ const Codes = ({ games }) => {
       </header>
       <Ul>
         {
-          games.map((game, i) =>
+	        projects.map((game, i) =>
             <Code
               key={i}
               {...game}

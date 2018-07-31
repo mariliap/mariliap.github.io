@@ -719,5 +719,5 @@ const getGames = R.pipe(
 
 module.exports = {
   jobsAndClients: getJobsAndClients(jobsAndClients),
-  games: getGames(jobsAndClients)
+	projects: getGames(jobsAndClients)
 };

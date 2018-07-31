@@ -140,7 +140,7 @@ const getCreatedBy = (author, sourceCodeLink) => {
 const Footer = ({ author, sourceCodeLink, currentLangKey }) => {
   return (
     <FooterMain>
-	    <Texture className="svg-background" width={100} height={100} data={{}} index={6}/>
+	    <Texture className="svg-background" width={'100%'} height={'100%'} data={{}} index={6}/>
       {getCreatedBy(author, sourceCodeLink)[currentLangKey]}
     </FooterMain>
   );

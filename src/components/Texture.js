@@ -107,8 +107,8 @@ class Texture extends React.Component {
     d3svg.append("rect")
       .attr("x", 0)
       .attr("y", 0)
-      .attr("height", 3000)
-      .attr("width", 3000)
+      .attr("height",  this.props.height)
+      .attr("width", this.props.width)
       .style("fill", t.url())
     // Render it to React elements.
     return <TextureWrapper>{node.toReact()}</TextureWrapper>

@@ -236,10 +236,10 @@ const theme = {
       margin: `0 0 ${scale(4)} 0`,
       header: {
         fontSize: scale(5),
-        time: {
-          fontSize: scale(0),
-          color: colors.blue
-        }
+	      time: {
+		      fontSize: scale(0),
+		      color: colors.blueishGreyPaletteSand
+	      }
       },
       content: {
         code: {

@@ -27,20 +27,29 @@ const small = (...args) => css`
   @media screen and (max-width: 600px) {
     ${ css(...args) }
   }
-`
+`;
 const medium = (...args) => css`
   @media screen and (min-width: 601px) and (max-width: 1200px) {
     ${ css(...args) }
   }
-`
+`;
 const large = (...args) => css`
   @media screen and (min-width: 1201px) {
     ${ css(...args) }
   }
-`
+`;
+
+const SectionSeparator = styled.section`
+  height: 45px;
+  background-size: 35px 35px;
+  background-image: url("data:image/svg+xml,%3Csvg width='64' height='64' viewBox='0 0 64 64' 
+                         xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 16c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm0-2c3.314 0 6-2.686 6-6s-2.686-6-6-6-6 2.686-6 6 2.686 6 6 6zm33.414-6l5.95-5.95L45.95.636 40 6.586 34.05.636 32.636 2.05 38.586 8l-5.95 5.95 1.414 1.414L40 9.414l5.95 5.95 1.414-1.414L41.414 8zM40 48c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm0-2c3.314 0 6-2.686 6-6s-2.686-6-6-6-6 2.686-6 6 2.686 6 6 6zM9.414 40l5.95-5.95-1.414-1.414L8 38.586l-5.95-5.95L.636 34.05 6.586 40l-5.95 5.95 1.414 1.414L8 41.414l5.95 5.95 1.414-1.414L9.414 40z' 
+                         fill='%23c5c3a0' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E");
+`;
+
 
 const PostBlock = styled.article`
-  // margin: ${props => props.theme.blog.post.margin};
+  //margin: ${props => props.theme.blog.post.margin};
   // padding: ${props => props.theme.blog.post.padding};
   ${small`
     padding: 10px 10px 10px 10px;
@@ -86,39 +95,7 @@ const H1 = styled.h1`
 `;
 
 const Content = styled.section`
-  margin: 0 0 ${({ theme }) => theme.scale(6)} 0;
-  // ${small`
-  //   padding:  ${props => props.theme.spacing.half} ${props => props.theme.spacing.half};
-  // `}
-  // ${medium`
-  //   padding: ${props => props.theme.spacing.single} ${props => props.theme.spacing.double}; 
-  // `}
-  // ${large`
-  //   padding: ${props => props.theme.spacing.single} ${props => props.theme.spacing.double}; 
-  // `}
-  // position: relative;
-  // z-index: 10;
-  // background-color: ${props => props.theme.colors.blueishGrey};
-  // box-shadow: 8px 8px rgba(0,0,0,0.15);
-  // border-left: 40px solid #eeeeee;
-  // width: 100%;
-  // ${large`
-  //   > div {
-  //     width: calc( ( 100% -  ${props => props.theme.spacing.double} ) / 2 );
-  //   }
-  // `};
-  // &.section-intro-contents{
-  //   border: none;
-  //   ${small`
-  //     padding: ${props => props.theme.spacing.double} ${props => props.theme.spacing.half} ${props => props.theme.spacing.half} ${props => props.theme.spacing.half};
-  //   `}
-  //   ${medium`
-  //     padding: ${props => props.theme.spacing.double} ${props => props.theme.spacing.single} ${props => props.theme.spacing.single} ${props => props.theme.spacing.single};
-  //   `}
-  //   ${large`
-  //     padding: ${props => props.theme.spacing.double} ${props => props.theme.spacing.double};
-  //   `}
-  // };  
+  margin: 0 0 ${({ theme }) => theme.scale(6)} 0;  
   
   p > code {
     color: ${props => props.theme.blog.post.content.code.color};
@@ -312,7 +289,7 @@ class BlogPostRoute extends React.PureComponent {
   
     return (
       <PostBlock>
-	      <Texture className="svg-background" width={100} height={100} data={{}} index={0}/>
+	      <Texture className="svg-background" width={'100%'} height={'100%'} data={{}} index={0}/>
         <Post>
           <Helmet
             title={`${markdownRemark.frontmatter.title}`}
@@ -339,12 +316,14 @@ class BlogPostRoute extends React.PureComponent {
           {tags}
           {youtube}
           <Content dangerouslySetInnerHTML={{ __html: markdownRemark.html }} />
-          <Comments
-            shortname="angeloocana-com"
-            identifier={markdownRemark.fields.slug}
-            title={markdownRemark.frontmatter.title}
-            url={url}
-          />
+          {/*<SectionSeparator/>*/}
+          {/*<Comments*/}
+            {/*shortname="angeloocana-com"*/}
+            {/*identifier={markdownRemark.fields.slug}*/}
+            {/*title={markdownRemark.frontmatter.title}*/}
+            {/*url={url}*/}
+          {/*/>*/}
+	        <SectionSeparator/>
           {tags}
           <Posts
             posts={markdownRemark.fields.readNextPosts}

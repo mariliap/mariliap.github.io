@@ -1,6 +1,6 @@
 const { technologies } = require('./technologies');
 const { languages } = require('./languages');
-const { jobsAndClients, games } = require('./jobsAndClients');
+const { jobsAndClients, projects } = require('./jobsAndClients');
 const { educations } = require('./educations');
 const { getArray } = require('./getArray');
 const { filter } = require('ramda');
@@ -32,7 +32,7 @@ module.exports = {
   technologies: getArray(technologies),
   pinnedTechnologies: filter(t => t.pinned, getArray(technologies)),
   educations: getArray(educations),
-  games,
+	projects,
   jobsAndClients,
   languages: getArray(languages),
   menu

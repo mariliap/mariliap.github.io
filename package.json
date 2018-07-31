@@ -75,6 +75,7 @@
     "ptz-validations": "^3.0.1",
     "ramda": "^0.24.1",
     "react-addons-perf": "^15.4.2",
+    "react-custom-scrollbars": "^4.2.1",
     "react-disqus-comments": "^1.0.3",
     "react-disqus-thread": "^0.4.0",
     "react-gravatar": "^2.6.3",

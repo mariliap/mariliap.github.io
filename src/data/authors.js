@@ -1,5 +1,5 @@
 const authors = {
-  angeloocana: {
+  mariliaportela: {
     name: 'Marília Portela de Lima',
     additionalName: 'mariliaportela',
     address: 'Fortaleza BR',
@@ -42,7 +42,7 @@ const authors = {
     description: '...',
     disambiguatingDescription: '...',
     identifier: '...',
-    image: 'http://www.gravatar.com/avatar/9174fca44b5ca403593ac9cb2407e0e7',
+    image: 'https://s.gravatar.com/avatar/1f52a6999175c8d4c23c476f6f30b3e4?s=80',
     sameAs: 'https://mariliaportela.com/en/about/',
     url: 'https:///mariliaportela.com/en/about/'
   }

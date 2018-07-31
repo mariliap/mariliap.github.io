@@ -1,11 +1,13 @@
 ---
 title: 10 tips to Start using Github and Command line
-date: '2017-09-21'
+date: '2018-07-30'
 layout: post
 draft: false
 tags:
-    - Git
-    - version control
+    - Jpa
+    - Hibernate
+readNext:
+	- /fr/blog/liquibase/10-tips-to-liquibase/
 structuredData:
   alternativeHeadline: ...  
   locationCreated: Ottawa CA

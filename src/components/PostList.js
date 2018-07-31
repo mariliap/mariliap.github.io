@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import PostListItem from './PostListItem';
 import styled from 'styled-components';
 import {css} from 'styled-components';
+import { Scrollbars } from 'react-custom-scrollbars';
+import CleanTime from "./Time";
 
 const large = (...args) => css`
   @media screen and (min-width: 1201px) {
@@ -26,17 +28,31 @@ const Ul = styled.ul`
 `;
 
 const ScrollableDiv = styled.div`
-    height: 50vh;
-    overflow-y: auto;
-    // ::-webkit-scrollbar{
-    //     color: blue;
+    // height: 50vh;
+    // overflow-y: auto;
+    backgroundColor: tomato;
+    // &::-webkit-scrollbar{
+    //   width: 20px;
+    // };
+    // &::-webkit-scrollbar-track{
+    //   background: tomato;
+    //   border-left: 9px solid white;
+    //   border-right: 9px solid white;
+    // };
+    // &::-webkit-scrollbar-thumb{
+    //   background: black;
+    //   border-left: 7px solid white;
+    //   border-right: 7px solid white;
     // };
 `;
+
+
+
 
 const PostList = (props) => {
   return (
       //style={{height: '50vh', overflowY: 'scroll'}}
-      <ScrollableDiv>
+      <Scrollbars style={{ height: '50vh' }} >
         <nav>
           <Ul>
             {props.posts.map(post =>
@@ -44,7 +60,7 @@ const PostList = (props) => {
             )}
           </Ul>
         </nav>
-      </ScrollableDiv>
+      </Scrollbars>
   );
 };
 
