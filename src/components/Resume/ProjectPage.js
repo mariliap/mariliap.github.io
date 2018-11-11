@@ -8,6 +8,9 @@ import Technologies from './Technologies';
 import Helmet from 'react-helmet';
 import A from '../A';
 import { head, last } from 'ramda';
+import SectionBlock from '../SectionBlock';
+import SectionContent from '../SectionContent';
+import Texture from '../Texture.js'
 
 const Header = styled.header`
   padding-bottom: ${({ theme }) => theme.scale(1)};
@@ -86,26 +89,31 @@ const ProjectPage = (props) => {
   const description = project.description;
 
   return (
-    <ResumeContainer
-      menu={menu}
-      selectedPage="/resume/jobs-and-clients/"
-      breadCrumb={getBreadCrumb(props.intl.locale, job)}
-    >
-      <FormattedMessage id="resume">
-        {(resume) => (
-          <Helmet
-            title={`${resume} - ${job.name} - ${project.name}`}
-            meta={[{ name: 'description', content: description }]}
-          />
-        )}
-      </FormattedMessage>
-      <Header>
-        <H1>{project.name}</H1>
-      </Header>
-      {getLink(project)}
-      {getYears(project.years)}
-      {getTechnologies(project)}
-    </ResumeContainer>
+	  <div>
+		  <SectionBlock className="posts" backgroundColor={({ theme }) => theme.colors.blueishGreyPaletteSand} >
+			  <Texture className="svg-background" width={'100%'} height={'100%'} data={{}} index={3}/>
+			  <SectionContent>
+				  <ResumeContainer menu={menu} selectedPage="/resume/jobs-and-clients/" breadCrumb={getBreadCrumb(props.intl.locale, job)}>
+
+            <FormattedMessage id="resume">
+              {(resume) => (
+                <Helmet
+                  title={`${resume} - ${job.name} - ${project.name}`}
+                  meta={[{ name: 'description', content: description }]}
+                />
+              )}
+            </FormattedMessage>
+            <Header>
+              <H1>{project.name}</H1>
+	            <H1>{project.description}</H1>
+            </Header>
+            {getLink(project)}
+            {getYears(project.years)}
+            {getTechnologies(project)}
+          </ResumeContainer>
+		    </SectionContent>
+	    </SectionBlock>
+	  </div>
   );
 };
 

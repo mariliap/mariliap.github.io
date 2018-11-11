@@ -2,6 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ResumeContainer from './ResumeContainer';
 import Technologies from './Technologies';
+import SectionBlock from '../SectionBlock';
+import SectionContent from '../SectionContent';
+import Texture from '../Texture.js'
 import { InvisibleSpan } from '../Invisible';
 import Select, {
   addAll,
@@ -35,11 +38,10 @@ const Filters = styled.fieldset`
   justify-content: space-around;
   z-index: 1;
 
-  position: fixed;
+  position: relative;
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: ${({ theme }) => theme.colors.blackShades[0]};  
 `;
 
 const Selects = styled.div`
@@ -113,41 +115,46 @@ class TechnologiesPage extends React.PureComponent {
     const { menu } = this.props.data.site.siteMetadata.resume;
 
     return (
-      <ResumeContainer
-        menu={menu}
-        selectedPage="/resume/"
-      >
-        <Filters>
-          <FormattedMessage id="resume.technologies">
-            {(txt) => (
-              <legend>
-                <Helmet
-                  title={txt}
-                  meta={[{ name: 'description', content: txt }]}
-                />
-                <InvisibleSpan>
-                  {txt}
-                </InvisibleSpan>
-              </legend>
-            )}
-          </FormattedMessage>
-          <Selects>
-            <Select
-              items={years}
-              onChange={this.selectYear}
-              selected={this.state.selectedYear}
-              label="resume.filters.year"
-            />
-            <Select
-              items={tags}
-              onChange={this.selectTag}
-              selected={this.state.selectedTag}
-              label="resume.filters.tag"
-            />
-          </Selects>
-        </Filters>
-        <Technologies technologies={technologies} />
-      </ResumeContainer>
+	    <div>
+		    <SectionBlock className="posts" backgroundColor={({ theme }) => theme.colors.blueishGreyPaletteSand} >
+			    <Texture className="svg-background" width={'100%'} height={'100%'} data={{}} index={3}/>
+          <SectionContent>
+            <ResumeContainer menu={menu} selectedPage="/resume/">
+
+              <Technologies technologies={technologies} />
+	            <Filters>
+		            <FormattedMessage id="resume.technologies">
+			            {(txt) => (
+				            <legend>
+					            <Helmet
+						            title={txt}
+						            meta={[{ name: 'description', content: txt }]}
+					            />
+					            <InvisibleSpan>
+						            {txt}
+					            </InvisibleSpan>
+				            </legend>
+			            )}
+		            </FormattedMessage>
+		            <Selects>
+			            <Select
+				            items={years}
+				            onChange={this.selectYear}
+				            selected={this.state.selectedYear}
+				            label="resume.filters.year"
+			            />
+			            <Select
+				            items={tags}
+				            onChange={this.selectTag}
+				            selected={this.state.selectedTag}
+				            label="resume.filters.tag"
+			            />
+		            </Selects>
+	            </Filters>
+            </ResumeContainer>
+          </SectionContent>
+		    </SectionBlock>
+	    </div>
     );
   }
 }

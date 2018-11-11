@@ -56,7 +56,7 @@ const CalendarIcon = styled(CalendarNoStyle)`
 
 const JobDates = ({ start, end }) => {
   return (
-    <div>
+    <div >
       <CalendarIcon />
       <DateLabel date={start} />
       <DateLabel date={end} />

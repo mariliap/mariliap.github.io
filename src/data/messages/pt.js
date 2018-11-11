@@ -28,7 +28,7 @@ module.exports = {
 
   'resume.technologies': 'Tecnologias',
 
-  'resume.technologies.seeMore': 'Ver todas tecnologias +',
+  'resume.technologies.seeMore': 'Ver todas tecnologias',
 
   'resume.technologies.noTechnologies': `0 Tecnologias. Selecione anos e tags`,
 

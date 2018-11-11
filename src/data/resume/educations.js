@@ -12,18 +12,18 @@ const educations = {
       fr: 'Technologie et Design'
     }
   },
-  'FIAP': {
+  'UNI7': {
     subject: {
-      pt: 'Análise e Desenvolvimento de Sistemas',
+      pt: 'Arquitetura de Sistemas para a Internet',
       en: 'Analysis and systems development',
       fr: 'Analyse et développement de systèmes'
     },
-    fullName: 'Faculdade de Informática e Administração Paulista',
-    years: range(2010, 2011),
+    fullName: 'Centro Universitário 7 de Setembro',
+    years: range(2017, 2018),
     img: 'fiap.svg',
     link: 'https://www.fiap.com.br'
   },
-  'UNIP': {
+  'UPE': {
     subject: {
       pt: 'Análise e Desenvolvimento de Sistemas',
       en: 'Analysis and systems development',

@@ -4,37 +4,44 @@ import ResumeContainer from './ResumeContainer';
 import { FormattedMessage } from 'react-intl';
 import H2 from '../H2';
 import JobsAndClient from './JobsAndClient';
+import SectionBlock from '../SectionBlock';
+import SectionContent from '../SectionContent';
+import Texture from '../Texture.js'
 import Helmet from 'react-helmet';
 
 const JobsAndClientsPage = (props) => {
   const { menu, jobsAndClients } = props.data.site.siteMetadata.resume;
 
   return (
-    <ResumeContainer
-      menu={menu}
-      selectedPage="/resume/jobs-and-clients/"
-    >
-      <FormattedMessage id="resume.jobsAndClients">
-        {(txt) => (
-          <header>
-            <Helmet
-              title={txt}
-              meta={[{ name: 'description', content: txt }]}
-            />
-            <H2>
-              {txt}
-            </H2>
-          </header>
-        )}
-      </FormattedMessage>
-      <ul>
-        {
-          jobsAndClients.map(job => (
-            <JobsAndClient {...job} />
-          ))
-        }
-      </ul>
-    </ResumeContainer>
+	  <div>
+		  <SectionBlock className="posts" backgroundColor={({ theme }) => theme.colors.blueishGreyPaletteSand} >
+			  <Texture className="svg-background" width={'100%'} height={'100%'} data={{}} index={3}/>
+			  <SectionContent>
+          <ResumeContainer  menu={menu} selectedPage="/resume/jobs-and-clients/">
+            <FormattedMessage id="resume.jobsAndClients">
+              {(txt) => (
+                <header>
+                  <Helmet
+                    title={txt}
+                    meta={[{ name: 'description', content: txt }]}
+                  />
+                  <H2>
+                    {txt}
+                  </H2>
+                </header>
+              )}
+            </FormattedMessage>
+            <ul>
+              {
+                jobsAndClients.map(job => (
+                  <JobsAndClient {...job} />
+                ))
+              }
+            </ul>
+          </ResumeContainer>
+		    </SectionContent>
+	    </SectionBlock>
+	  </div>
   );
 };
 

@@ -4,6 +4,7 @@ import Posts from './Posts';
 import SocialLinks from './SocialLinks';
 import Welcome from './Welcome';
 import BtnLink from './BtnLink';
+import SectionBlock from './SectionBlock';
 import Technologies from './Resume/Technologies';
 import Codes from './Resume/Codes';
 import Link from './Link';
@@ -38,36 +39,7 @@ const large = (...args) => css`
   }
 `
 
-const SectionBlock = styled.section`
-  ${small`
-    padding: 10px 10px 10px 10px;
-  `}
-  ${medium`
-    padding: 20px 80px 20px 80px;
-    min-height: 100vh;
-  `}
-  ${large`
-    padding: 40px 120px 40px 120px;
-    min-height: 100vh;
-  `}
-  flex: 1;
-  display: flex;
-  align-items: center;
-  position: relative;
-  &:last-of-type{
-    .section-icon{
-      &:after{
-        display: none;
-      }
-    }
-  }
-  &.section-intro{
-    perspective: 1000px;
-    ${small`
-      padding-top: 80px;
-    `}
-  }
-`;
+
 
 const SectionContents = styled.div`
   ${small`
@@ -162,13 +134,13 @@ const Index = (props) => {
 	  	  
 		  <SectionBlock  style={{backgroundColor: '#C5C3A0'}}  >
 				<Texture className="svg-background" width={'100%'} height={'100%'} data={{}} index={0}/>
-					<SectionContents>
-						<Posts
-							posts={posts}
-							langKey={langKey}
-							showBtnMorePosts
-						/>
-					</SectionContents>
+			  <SectionContents>
+					<Posts
+						posts={posts}
+						langKey={langKey}
+						showBtnMorePosts
+					/>
+				</SectionContents>
 		  </SectionBlock>
     </div>
   );

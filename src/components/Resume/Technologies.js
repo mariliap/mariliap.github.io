@@ -5,6 +5,7 @@ import H2 from '../H2';
 import Technology from './Technology';
 import Error from '../Error';
 import { FormattedMessage } from 'react-intl';
+import H1 from "../H1";
 
 const Ul = styled.ul`
   display: flex;
@@ -12,6 +13,10 @@ const Ul = styled.ul`
   justify-content: space-around;
   margin: 1rem 0 0 0;
   padding: 0;
+`;
+
+const H0 = styled(H1)`
+  color: ${props => props.theme.blog.post.header.time.color};
 `;
 
 const Technologies = ({ technologies }) => {
@@ -32,9 +37,9 @@ const Technologies = ({ technologies }) => {
       <header>
         <FormattedMessage id="resume.technologies">
           {(txt) => (
-            <H2>
+            <H0>
               {txt}
-            </H2>
+            </H0>
           )}
         </FormattedMessage>
       </header>

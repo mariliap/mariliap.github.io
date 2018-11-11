@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import H2 from '../H2';
 import { FormattedMessage } from 'react-intl';
 import styled from 'styled-components';
 import Link from '../Link';
@@ -11,10 +10,20 @@ const Header = styled.header`
 `;
 
 const Li = styled.li`  
-  padding-top: ${({ theme }) => theme.scale(-2)};
-  padding-bottom: ${({ theme }) => theme.scale(-2)};
-  display: block;
+  padding-top: ${props => props.theme.resume.projetos.li.paddingTop};
+  padding-bottom: ${props => props.theme.resume.projetos.li.paddingBottom};
+  display: ${props => props.theme.resume.projetos.li.display};
+  text-align: ${props => props.theme.resume.projetos.li.textAlign};
 `;
+
+const H1 = styled.h1`
+  font-size: ${props =>  props.theme.resume.projetos.h1.fontSize};
+  margin: ${props =>  props.theme.resume.projetos.h1.margin};
+  padding: ${props =>  props.theme.resume.projetos.h1.padding};
+  text-align: ${props =>  props.theme.resume.projetos.h1.textAlign};
+  color: ${props =>  props.theme.resume.projetos.h1.color};
+`;
+
 
 const Projects = ({ projects, job, langKey }) => {
   return (
@@ -22,9 +31,9 @@ const Projects = ({ projects, job, langKey }) => {
       <Header>
         <FormattedMessage id="resume.jobsAndClients.projects">
           {(txt) => (
-            <H2>
+            <H1>
               {txt}
-            </H2>
+            </H1>
           )}
         </FormattedMessage>
       </Header>

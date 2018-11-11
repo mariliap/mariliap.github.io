@@ -12,7 +12,7 @@ const authors = {
     email: 'mariliaportela@gmail.com',
     familyName: '...',
     gender: 'Female',
-    givenName: 'Angelo',
+    givenName: 'Marília',
     height: '...',
     homeLocation: 'Fortaleza',
     jobTitle: 'Software Engineer',

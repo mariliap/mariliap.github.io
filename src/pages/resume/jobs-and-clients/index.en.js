@@ -25,6 +25,10 @@ export const pageQuery = graphql`
             },
             img,
             link,
+            description{
+              pt
+              en
+            },
             projects {
               name
               description

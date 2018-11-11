@@ -111,13 +111,12 @@ const SelectLanguage = (props) => {
     <Nav {...props} isOpen>
       <header>
         <InvisibleSpan>Select your language:</InvisibleSpan>
-		
       </header>
-	  <Label>
-		<FormattedMessage id="language"/>
-	  </Label>
+	    <Label>
+				<FormattedMessage id="language"/>
+	    </Label>
       <Ul>
-		{selection}
+				{selection}
         {links}
       </Ul>
     </Nav>

@@ -21,30 +21,114 @@ const technologies = {
   js: {
     pinned: true,
     name: 'Javascript',
-    years: range(2007, thisYear),
+    years: range(2018, thisYear),
     tags: [tags.frontEnd, tags.backEnd],
-    level: levels.expert,
+    level: levels.novice,
     img: 'javascript.png',
+	  needWhiteBg: false,
     link: 'https://en.wikipedia.org/wiki/JavaScript'
   },
   nodejs: {
     pinned: true,
     name: 'NodeJs',
-    years: range(2015, thisYear),
+    years: range(2018, thisYear),
     tags: [tags.backEnd],
-    level: levels.expert,
+    level: levels.novice,
     img: 'nodejs.svg',
+	  needWhiteBg: false,
     link: 'https://nodejs.org'
   },
   react: {
     pinned: true,
     name: 'React',
-    years: range(2016, thisYear),
+    years: range(2018, thisYear),
     tags: [tags.frontEnd],
-    level: levels.expert,
+    level: levels.novice,
     img: 'react.svg',
+	  needWhiteBg: false,
     link: 'https://facebook.github.io/react/'
   },
+	gatsby: {
+		pinned: true,
+		name: 'Gatsby',
+		years: range(2018, thisYear),
+		tags: [tags.frontEnd],
+		level: levels.novice,
+		img: 'gatsby.svg',
+		needWhiteBg: false,
+		link: 'https://www.gatsbyjs.org/'
+	},
+	docker: {
+		name: 'Docker',
+		years: range(2017, thisYear),
+		tags: [tags.backEnd],
+		level: levels.proficient,
+		img: 'docker.png',
+		needWhiteBg: true,
+		link: 'https://www.docker.com/'
+	},
+
+	d3: {
+		name: 'D3',
+		years: range(2018, thisYear),
+		tags: [tags.frontEnd],
+		level: levels.novice,
+		img: 'd3.png',
+		needWhiteBg: false,
+		link: 'https://d3js.org/'
+	},
+
+	styledComponents: {
+		name: 'Styled Components',
+		years: range(2017, thisYear),
+		needWhiteBg: true,
+		tags: [tags.frontEnd],
+		level: levels.proficient,
+		img: 'styled-components.png',
+		link: 'https://www.styled-components.com/'
+	},
+	html: {
+		name: 'HTML',
+		years: range(2007, thisYear),
+		tags: [tags.frontEnd],
+		level: levels.expert,
+		img: 'html.png',
+		link: 'https://www.w3schools.com/html/'
+	},
+	css: {
+		name: 'CSS',
+		years: range(2007, thisYear),
+		tags: [tags.frontEnd],
+		level: levels.expert,
+		img: 'css.svg',
+		link: 'https://www.w3schools.com/css/'
+	},
+	sqlServer: {
+		name: 'SQL Server',
+		years: range(2008, 2016),
+		tags: [tags.db, tags.backEnd],
+		level: levels.expert,
+		img: 'sql-server.png',
+		needWhiteBg: true,
+		link: 'https://en.wikipedia.org/wiki/Microsoft_SQL_Server'
+	},
+	mySql: {
+		name: 'MySql',
+		years: range(2007, 2009),
+		tags: [tags.db, tags.backEnd],
+		level: levels.proficient,
+		img: 'mysql.png',
+		link: 'https://www.mysql.com/'
+	},
+	postgres: {
+		name: 'PostgreSQL',
+		years: range(2014, 2015),
+		tags: [tags.db, tags.backEnd],
+		level: levels.proficient,
+		img: 'postgresql.svg',
+		link: 'https://www.postgresql.org/'
+	}
+  /*
   graphql: {
     pinned: true,
     name: 'GraphQL',
@@ -63,33 +147,15 @@ const technologies = {
     img: 'mongodb.svg',
     link: 'https://www.mongodb.com/'
   },
-  gatsby: {
-    pinned: true,    
-    name: 'Gatsby',
-    years: range(2017, thisYear),
-    tags: [tags.frontEnd],
-    level: levels.proficient,
-    img: 'gatsby.svg',
-    link: 'https://www.gatsbyjs.org/'
-  },
-  docker: {    
-    name: 'Docker',
-    years: range(2017, thisYear),
-    tags: [tags.backEnd],
-    level: levels.proficient,
-    img: 'docker.png',
-    needWhiteBg: true,
-    link: 'https://www.docker.com/'
-  },
-  ramda: {
-    name: 'Ramda',
-    years: range(2017, thisYear),
-    tags: [tags.frontEnd, tags.backEnd],
-    level: levels.proficient,
-    img: 'ramda.png',
-    needWhiteBg: true,
-    link: 'http://ramdajs.com/'
-  },
+	ramda: {
+		name: 'Ramda',
+		years: range(2017, thisYear),
+		tags: [tags.frontEnd, tags.backEnd],
+		level: levels.proficient,
+		img: 'ramda.png',
+		needWhiteBg: true,
+		link: 'http://ramdajs.com/'
+	},
   typeScript: {
     name: 'TypeScript',
     years: range(2015, thisYear),
@@ -98,15 +164,15 @@ const technologies = {
     img: 'typescript.png',
     link: 'https://www.typescriptlang.org/'
   },
-  // tslint: {
-  //   name: 'TSLint',
-  //   years: range(2015, thisYear),
-  //   tags: [tags.frontEnd, tags.backEnd],
-  //   level: levels.expert,
-  //   needWhiteBg: true,
-  //   img: 'tslint.png',
-  //   link: 'https://palantir.github.io/tslint/'
-  // },
+  tslint: {
+    name: 'TSLint',
+    years: range(2015, thisYear),
+    tags: [tags.frontEnd, tags.backEnd],
+    level: levels.expert,
+    needWhiteBg: true,
+    img: 'tslint.png',
+    link: 'https://palantir.github.io/tslint/'
+  },
   gulp: {
     name: 'Gulp',
     years: range(2015, 2016),
@@ -310,23 +376,6 @@ const technologies = {
     img: 'extnet.png',
     link: 'http://ext.net/'
   },
-  // d3: {
-  //   name: 'D3',
-  //   years: range(2016, thisYear),
-  //   tags: [tags.frontEnd],
-  //   level: levels.proficient,
-  //   img: 'd3.png',
-  //   link: 'https://d3js.org/'
-  // },
-  styledComponents: {
-    name: 'Styled Components',
-    years: range(2017, thisYear),
-    needWhiteBg: true,
-    tags: [tags.frontEnd],
-    level: levels.proficient,
-    img: 'styled-components.png',
-    link: 'https://www.styled-components.com/'
-  },
   jest: {
     name: 'Jest',
     years: range(2017, thisYear),
@@ -384,47 +433,6 @@ const technologies = {
     img: 'jquery.svg',
     link: 'https://jquery.com/'
   },
-  html: {
-    name: 'HTML',
-    years: range(2007, thisYear),
-    tags: [tags.frontEnd],
-    level: levels.expert,
-    img: 'html.png',
-    link: 'https://www.w3schools.com/html/'
-  },
-  css: {
-    name: 'CSS',
-    years: range(2007, thisYear),
-    tags: [tags.frontEnd],
-    level: levels.expert,
-    img: 'css.svg',
-    link: 'https://www.w3schools.com/css/'
-  },
-  sqlServer: {
-    name: 'SQL Server',
-    years: range(2008, 2016),
-    tags: [tags.db, tags.backEnd],
-    level: levels.expert,
-    img: 'sql-server.png',
-    needWhiteBg: true,
-    link: 'https://en.wikipedia.org/wiki/Microsoft_SQL_Server'
-  },
-  mySql: {
-    name: 'MySql',
-    years: range(2007, 2009),
-    tags: [tags.db, tags.backEnd],
-    level: levels.proficient,
-    img: 'mysql.png',
-    link: 'https://www.mysql.com/'
-  },
-  postgres: {
-    name: 'PostgreSQL',
-    years: range(2014, 2015),
-    tags: [tags.db, tags.backEnd],
-    level: levels.proficient,
-    img: 'postgresql.svg',
-    link: 'https://www.postgresql.org/'
-  },
   php: {
     name: 'PHP',
     years: range(2008, 2010),
@@ -472,19 +480,20 @@ const technologies = {
     level: levels.proficient,
     img: 'flex.png',
     link: 'http://www.adobe.com/products/flex.html'
+  },
+  'Gimp': {
+    years: range(2007, 2008),
+    tags: [tags.backEnd],
+    level: levels.novice,
+    img: 'vb.svg'
+  },
+  'Inkscape': {
+    years: range(2007, 2008),
+    tags: [tags.backEnd],
+    level: levels.novice,
+    img: 'vb.svg'
   }
-  // 'Gimp': {
-  //   years: range(2007, 2008),
-  //   tags: [tags.backEnd],
-  //   level: levels.novice,
-  //   img: 'vb.svg'
-  // },
-  // 'Inkscape': {
-  //   years: range(2007, 2008),
-  //   tags: [tags.backEnd],
-  //   level: levels.novice,
-  //   img: 'vb.svg'
-  // },
+  */
 };
 
 const throwErrorForNullTags = (techs) => {

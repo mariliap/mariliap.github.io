@@ -56,6 +56,7 @@ const ProfilePicture = styled(Gravatar)`
 const GithubIcon = styled(FaGithub)`
   font-size: ${({ theme }) => theme.scale(4)};
   display: inline-block;
+  vertical-align: middle;
 `;
 
 const HomeCountryIcon = styled(Br)`

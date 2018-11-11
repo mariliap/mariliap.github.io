@@ -110,7 +110,7 @@ class Texture extends React.Component {
       .attr("height",  this.props.height)
       .attr("width", this.props.width)
       .style("fill", t.url())
-    // Render it to React elements.
+      // Render it to React elements.
     return <TextureWrapper>{node.toReact()}</TextureWrapper>
   }
 }

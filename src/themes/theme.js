@@ -1,3 +1,6 @@
+//import {css} from "styled-components/typings/styled-components";
+import { css} from 'styled-components';
+
 /**
  * Round x with n decimal.
  * @param {Number} x Number to be rounded.
@@ -41,6 +44,21 @@ const spacing = {
   double: "80px"
 };
 
+const small = (...args) => css`
+  @media screen and (max-width: 600px) {
+    ${ css(...args) }
+  }
+`
+const medium = (...args) => css`
+  @media screen and (min-width: 601px) and (max-width: 1200px) {
+    ${ css(...args) }
+  }
+`
+const large = (...args) => css`
+  @media screen and (min-width: 1201px) {
+    ${ css(...args) }
+  }
+`
 
 
 const theme = {
@@ -48,6 +66,9 @@ const theme = {
   scaleN,
 	spacing,
   colors,
+	small,
+	medium,
+	large,
   fontFamily,
   color: colors.white,
   bg: colors.blueishGrey,
@@ -93,19 +114,19 @@ const theme = {
       lineHeight: scaleN(-1)
     },
     isHome: {
-      title: {
-        fontSize: scale(7),
-        textAlign: 'center',
-        padding: `${scale(2)} 0 0 0`,
-        margin: `${scale(0)} 0 ${scale(4)} 0`,
-        lineHeight: scaleN(0)
-      },
-      subTitle: {
-        fontSize: `${scale(0)}`,
-        padding: `${scale(-4)} 0 0 0`,
-        margin: `0`,
-        lineHeight: scaleN(-1)
-      }
+	    title: {
+		    fontSize: scale(7),
+		    textAlign: 'center',
+		    padding: `${scale(2)} 0 0 0`,
+		    margin: `${scale(0)} 0 ${scale(4)} 0`,
+		    lineHeight: scaleN(0)
+	    },
+	    subTitle: {
+		    fontSize: `${scale(0)}`,
+		    padding: `${scale(-4)} 0 0 0`,
+		    margin: `0`,
+		    lineHeight: scaleN(-1)
+	    }
     }
   },
   menu: {
@@ -170,6 +191,23 @@ const theme = {
     padding: `0 0 0 0`,
     margin: `${scale(1)} 0 0 0`,
     textAlign: 'center'
+  },
+  resume:{
+	  projetos: {
+	    h1: {
+		    fontSize: scale(1),
+		    padding: `0 0 0 0`,
+		    margin: `${scale(1)} 0 0 0`,
+		    textAlign: 'center',
+		    color: colors.blueishGreyPaletteSand
+	    },
+	    li: {
+		    paddingTop: scale(-2),
+        paddingBottom: scale(-2),
+        display: 'block',
+        textAlign: 'center'
+      }
+	  }
   },
   blog: {
     list: {
