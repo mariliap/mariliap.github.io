@@ -29,7 +29,7 @@ const Job = (props) => {
 
   const description = job.description;
   const langKey = props.intl.locale;
-	console.log(props);
+
   return (
 	  <div>
 		  <SectionBlock className="posts" backgroundColor={({ theme }) => theme.colors.blueishGreyPaletteSand} >
@@ -48,7 +48,7 @@ const Job = (props) => {
               <H2>{job.name}</H2>
             </Header>
             <JobDates {...job.date} />
-	          <H2>{props.description[props.langKey]} aa</H2>
+	          <H2>{description[langKey]} aa</H2>
             <Projects
               projects={job.projects}
               langKey={langKey}

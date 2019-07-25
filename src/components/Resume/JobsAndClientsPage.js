@@ -11,7 +11,7 @@ import Helmet from 'react-helmet';
 
 const JobsAndClientsPage = (props) => {
   const { menu, jobsAndClients } = props.data.site.siteMetadata.resume;
-
+  
   return (
 	  <div>
 		  <SectionBlock className="posts" backgroundColor={({ theme }) => theme.colors.blueishGreyPaletteSand} >

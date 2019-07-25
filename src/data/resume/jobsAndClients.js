@@ -13,10 +13,11 @@ const jobsAndClients = {
       end: null
     },
     img: '',
-    link: 'https://angeloocana.com',
+    link: 'https://mariliap.github.io',
     description: {
-      pt: 'Desenvolvi sistemas e sites para: Envio de SMS, Academias, E-commerce, Sistes Institucionais, entre outros.',
-	    en: 'Desenvolvi sistemas e sites para: Envio de SMS, Academias, E-commerce, Sistes Institucionais, entre outros.'
+      pt: 'Desenvolvi sistemas PT',
+      en: 'Desenvolvi sistemas EN',
+      fr: 'Desenvolvi sistemas FR'
     },
     projects: [
       {
@@ -80,7 +81,8 @@ const jobsAndClients = {
         Principais Tecnologias: MVC, API, Jquery, Ajax, .NET 4.0 / 4.5 utilizando linguagem C#, Entity Framework, Migrations, UnitTest, Lucene, StructureMap, WebForms
         Principais Metodologias: Domain Driven Design, Test Driven Development, Scrum
         Banco de Dados: SQL Server (Gerenciamento, Criação de Querys, Stored Procedures, Functions, Views e Jobs)`,
-			en: ''
+      en: '',
+      fr: 'Desenvolvi sistemas e sites para: Envio de SMS, Academias, E-commerce, Sistes Institucionais, entre outros.'
 		},
 		projects: [
 			{
@@ -152,7 +154,8 @@ const jobsAndClients = {
         Principais Tecnologias: MVC, API, Jquery, Ajax, .NET 4.0 / 4.5 utilizando linguagem C#, Entity Framework, Migrations, UnitTest, Lucene, StructureMap, WebForms
         Principais Metodologias: Domain Driven Design, Test Driven Development, Scrum
         Banco de Dados: SQL Server (Gerenciamento, Criação de Querys, Stored Procedures, Functions, Views e Jobs)`,
-	    en: ''
+      en: '',
+      fr: 'Desenvolvi sistemas e sites para: Envio de SMS, Academias, E-commerce, Sistes Institucionais, entre outros.'
     },
 	  projects: [
       {
@@ -217,7 +220,8 @@ const jobsAndClients = {
     link: '',
 	  description: {
 		  pt: '',
-		  en: ''
+      en: '',
+      fr: 'Desenvolvi sistemas e sites para: Envio de SMS, Academias, E-commerce, Sistes Institucionais, entre outros.'
 	  },
     technologies: [
       // t.cSharp,

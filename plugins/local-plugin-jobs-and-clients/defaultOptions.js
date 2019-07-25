@@ -20,6 +20,11 @@ module.exports = {
               start
               end
             }
+            description{
+              pt 
+              en
+              fr
+            }
             projects {
               name
               slug

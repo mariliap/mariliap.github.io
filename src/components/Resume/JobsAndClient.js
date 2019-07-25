@@ -21,7 +21,7 @@ const Li = styled.li`
 
 const JobsAndClients = (props) => {
   const url = getJobUrl(props.intl.locale, props.slug);
-
+  
   return (
     <Li>
       <Link to={url}>

@@ -28,6 +28,7 @@ export const pageQuery = graphql`
             description{
               pt
               en
+              fr
             },
             projects {
               name

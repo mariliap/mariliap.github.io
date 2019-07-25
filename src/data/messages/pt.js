@@ -51,7 +51,7 @@ module.exports = {
   'resume.languages.level.proficient': 'Intermediário',
   'resume.languages.level.basic': 'Básico',
 
-  'resume.jobsAndClients': 'Clients e Jobs',
+  'resume.jobsAndClients': 'Clientes e Empregos',
   'resume.jobsAndClients.date.actual': 'Atual',
   'resume.jobsAndClients.projects': 'Projetos',
 
