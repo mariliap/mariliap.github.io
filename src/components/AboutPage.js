@@ -7,6 +7,9 @@ import BigFirstLetter from './BigFirstLetter';
 import styled from 'styled-components';
 import { FormattedMessage } from 'react-intl';
 import ResumeContainer from './Resume/ResumeContainer';
+import SectionBlock from './SectionBlock';
+import SectionContent from './SectionContent';
+import Texture from './Texture.js';
 import Helmet from 'react-helmet';
 
 const Header = styled.header`
@@ -22,28 +25,35 @@ const AboutPage = (props) => {
   const structuredData = getStructuredDataForAuthor(author);
 
   return (
-    <ResumeContainer menu={menu} selectedPage="/about/">
-      <BigFirstLetter>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: structuredData }}
-        />
-        <FormattedMessage id="about">
-          {(txt) => (
-            <Header>
-              <Helmet
-                title={txt}
-                meta={[{ name: 'description', content: txt }]}
-              />
-              <H1>
-                {txt}
-              </H1>
-            </Header>
-          )}
-        </FormattedMessage>
-        {props.i18n.description}
-      </BigFirstLetter>
-    </ResumeContainer>
+    <div>
+      <SectionBlock className="posts" backgroundColor={({ theme }) => theme.colors.blueishGreyPaletteSand} >
+          <Texture className="svg-background" width={'100%'} height={'100%'} data={{}} index={3}/>
+          <SectionContent>
+            <ResumeContainer menu={menu} selectedPage="/about/">
+              <BigFirstLetter>
+                <script
+                  type="application/ld+json"
+                  dangerouslySetInnerHTML={{ __html: structuredData }}
+                />
+                <FormattedMessage id="about">
+                  {(txt) => (
+                    <Header>
+                      <Helmet
+                        title={txt}
+                        meta={[{ name: 'description', content: txt }]}
+                      />
+                      <H1>
+                        {txt}
+                      </H1>
+                    </Header>
+                  )}
+                </FormattedMessage>
+                {props.i18n.description}
+              </BigFirstLetter>
+            </ResumeContainer>
+          </SectionContent>
+	    </SectionBlock>
+	  </div>
   );
 };
 

@@ -8,6 +8,9 @@ import Br from './flags/Br';
 import Ca from './flags/Ca';
 import A from './A';
 import { FormattedMessage } from 'react-intl';
+import SectionBlock from './SectionBlock';
+import SectionContent from './SectionContent';
+import Texture from './Texture.js';
 import Helmet from 'react-helmet';
 
 const getCountry = (country) => {
@@ -91,23 +94,28 @@ const Contact = (props) => {
 
   return (
     <section>
-      <FormattedMessage id="contact">
-        {(txt) => (
-          <header>
-            <Helmet
-              title={txt}
-              meta={[{ name: 'description', content: txt }]}
-            />
-            <H1>
-              {txt}
-            </H1>
-          </header>
-        )}
-      </FormattedMessage>
+      <SectionBlock className="posts" backgroundColor={({ theme }) => theme.colors.blueishGreyPaletteSand} >
+        <Texture className="svg-background" width={'100%'} height={'100%'} data={{}} index={3}/>
+        <SectionContent>
+          <FormattedMessage id="contact">
+            {(txt) => (
+              <header>
+                <Helmet
+                  title={txt}
+                  meta={[{ name: 'description', content: txt }]}
+                />
+                <H1>
+                  {txt}
+                </H1>
+              </header>
+            )}
+          </FormattedMessage>
 
-      <Ul>
-        {contactList}
-      </Ul>
+          <Ul>
+            {contactList}
+          </Ul>
+        </SectionContent>
+	    </SectionBlock>
     </section>
   );
 };

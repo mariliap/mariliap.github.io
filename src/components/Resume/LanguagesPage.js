@@ -8,6 +8,9 @@ import Ca from '../flags/Ca';
 import Fr from '../flags/Fr';
 import Br from '../flags/Br';
 import Es from '../flags/Es';
+import SectionBlock from '../SectionBlock';
+import SectionContent from '../SectionContent';
+import Texture from '../Texture.js'
 import Helmet from 'react-helmet';
 
 const getFlag = (langKey) => {
@@ -82,47 +85,54 @@ const LanguagesPage = (props) => {
   const { menu, languages } = props.data.site.siteMetadata.resume;
 
   return (
-    <ResumeContainer
-      menu={menu}
-      selectedPage="/resume/languages/"
-    >
-      <FormattedMessage id="resume.languages">
-        {(txt) => (
-          <header>
-            <Helmet
-              title={txt}
-              meta={[{ name: 'description', content: txt }]}
-            />
-            <H2>
-              {txt}
-            </H2>
-          </header>
-        )}
-      </FormattedMessage>
-      <Ul>
-        {
-          languages.map(lang => (
-            <Li>
-              <figure>
-                {getFlag(lang.key)}
-                <Figcaption>
-                  <Name>{lang.name[props.intl.locale]}</Name>
-                  <FormattedMessage
-                    id={'resume.languages.level.' + lang.level}
-                  >
-                    {(txt) => (
-                      <Level level={lang.level}>
-                        {txt}
-                      </Level>
-                    )}
-                  </FormattedMessage>
-                </Figcaption>
-              </figure>
-            </Li>
-          ))
-        }
-      </Ul>
-    </ResumeContainer>
+    <div>
+		  <SectionBlock className="posts" backgroundColor={({ theme }) => theme.colors.blueishGreyPaletteSand} >
+			  <Texture className="svg-background" width={'100%'} height={'100%'} data={{}} index={3}/>
+			  <SectionContent>
+          <ResumeContainer
+            menu={menu}
+            selectedPage="/resume/languages/"
+          >
+            <FormattedMessage id="resume.languages">
+              {(txt) => (
+                <header>
+                  <Helmet
+                    title={txt}
+                    meta={[{ name: 'description', content: txt }]}
+                  />
+                  <H2>
+                    {txt}
+                  </H2>
+                </header>
+              )}
+            </FormattedMessage>
+            <Ul>
+              {
+                languages.map(lang => (
+                  <Li>
+                    <figure>
+                      {getFlag(lang.key)}
+                      <Figcaption>
+                        <Name>{lang.name[props.intl.locale]}</Name>
+                        <FormattedMessage
+                          id={'resume.languages.level.' + lang.level}
+                        >
+                          {(txt) => (
+                            <Level level={lang.level}>
+                              {txt}
+                            </Level>
+                          )}
+                        </FormattedMessage>
+                      </Figcaption>
+                    </figure>
+                  </Li>
+                ))
+              }
+            </Ul>
+          </ResumeContainer>
+        </SectionContent>
+	    </SectionBlock>
+	  </div>
   );
 };
 
