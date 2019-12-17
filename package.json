@@ -15,7 +15,9 @@
     "gatsby-plugin-i18n-tags": "^0.0.3",
     "gatsby-plugin-react-helmet": "^1.0.8",
     "gatsby-plugin-styled-components": "^1.0.4",
+    "npm": "^6.10.2",
     "react-faux-dom": "^4.5.0",
+    "react-vertical-timeline-component": "^2.4.0",
     "textures": "^1.2.0"
   },
   "keywords": [

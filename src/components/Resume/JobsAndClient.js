@@ -5,6 +5,9 @@ import styled from 'styled-components';
 import { getJobUrl } from '../../data/resume/getJobUrl';
 import Link from '../Link';
 import JobDates from './JobDates';
+import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
+import 'react-vertical-timeline-component/style.min.css';
+import FaGithub from 'react-icons/lib/fa/github';
 
 const H3 = styled.h3`
   font-size: ${({ theme }) => theme.scale(3)};
@@ -19,11 +22,23 @@ const Li = styled.li`
   padding-bottom: ${({ theme }) => theme.scale(0)};
 `;
 
+const WorkIcon = styled(FaGithub)`
+  font-size: ${({ theme }) => theme.scale(4)};
+  display: inline-block;
+  vertical-align: middle;
+`;
+
 const JobsAndClients = (props) => {
   const url = getJobUrl(props.intl.locale, props.slug);
-  
+  console.log(props.date)
   return (
-    <Li>
+
+    <VerticalTimelineElement
+      className="vertical-timeline-element--work"
+      date={<JobDates {...props.date} />}
+      iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+      icon={<WorkIcon />}
+    >
       <Link to={url}>
         <section>
           <header>
@@ -32,7 +47,8 @@ const JobsAndClients = (props) => {
           </header>
         </section>
       </Link>
-    </Li>
+    </VerticalTimelineElement>
+    
   );
 };
 

@@ -122,7 +122,7 @@ const technologies = {
 	},
 	postgres: {
 		name: 'PostgreSQL',
-		years: range(2014, 2015),
+		years: range(2016, 2020),
 		tags: [tags.db, tags.backEnd],
 		level: levels.proficient,
 		img: 'postgresql.svg',
@@ -271,7 +271,7 @@ const technologies = {
     img: 'amazon.svg',
     link: 'https://aws.amazon.com/'
   },
-  eroku: {
+  heroku: {
     name: 'Eroku',
     years: range(2014, 2015),
     tags: [tags.cloud],

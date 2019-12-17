@@ -1,7 +1,7 @@
 const {range, thisYear} = require('./time');
 
 const educations = {
-  'Pluralsight': {
+  'Udemy': {
     years: range(2012, thisYear),
     link: 'https://app.pluralsight.com/profile/ocanaangelo',
     img: 'pluralsight.png',
@@ -19,7 +19,7 @@ const educations = {
       fr: 'Analyse et développement de systèmes'
     },
     fullName: 'Centro Universitário 7 de Setembro',
-    years: range(2017, 2018),
+    years: range(2017, 2019),
     img: 'fiap.svg',
     link: 'https://www.fiap.com.br'
   },
@@ -30,29 +30,29 @@ const educations = {
       fr: 'Analyse et développement de systèmes'
     },
     fullName: 'Universidade Paulista',
-    years: range(2013, 2014),
+    years: range(2004, 2009),
     img: 'unip.png',
     link: 'https://www.unip.br/'
   },
-  'FIEB': {
-    subject: {
-      pt: 'Web Design com Ênfase em Mídias Digitais',
-      en: 'Web Design with Emphasis on Digital Media',
-      fr: 'Conception Web avec accent sur les médias numériques'
-    },
-    fullName: 'Instituto Técnico de Barueri',
-    years: range(2007, 2009),
-    img: 'fieb.png',
-    link: 'http://www.fieb.edu.br'
-  },
-  'Inglês 200h': {
+  'Yazigi': {
     years: range(2008, 2009),
     img: 'ingles200h.png',
     needWhiteBg: true,
     subject: {
-      pt: 'Inglês',
-      en: 'English',
-      fr: 'Anglais'
+      pt: 'Inglês & Espanhol',
+      en: 'English & Spanish',
+      fr: 'Anglais & Espagnol'
+    },
+    link: 'https://www.ingles200h.com/'
+  },
+  'Alliance Frençaise': {
+    years: range(2008, 2009),
+    img: 'ingles200h.png',
+    needWhiteBg: true,
+    subject: {
+      pt: 'Francês',
+      en: 'French',
+      fr: 'Français'
     },
     link: 'https://www.ingles200h.com/'
   }

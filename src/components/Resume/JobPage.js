@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import H2 from '../H2';
+import H1 from '../H1';
 import { injectIntl, FormattedMessage } from 'react-intl';
 import Helmet from 'react-helmet';
 import JobDates from './JobDates';
@@ -48,7 +49,7 @@ const Job = (props) => {
               <H2>{job.name}</H2>
             </Header>
             <JobDates {...job.date} />
-	          <H2>{description[langKey]} aa</H2>
+	          <H1>{description[langKey]} aa</H1>
             <Projects
               projects={job.projects}
               langKey={langKey}

@@ -8,6 +8,8 @@ import SectionBlock from '../SectionBlock';
 import SectionContent from '../SectionContent';
 import Texture from '../Texture.js'
 import Helmet from 'react-helmet';
+import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
+import 'react-vertical-timeline-component/style.min.css';
 
 const JobsAndClientsPage = (props) => {
   const { menu, jobsAndClients } = props.data.site.siteMetadata.resume;
@@ -31,13 +33,13 @@ const JobsAndClientsPage = (props) => {
                 </header>
               )}
             </FormattedMessage>
-            <ul>
+            <VerticalTimeline>
               {
                 jobsAndClients.map(job => (
                   <JobsAndClient {...job} />
                 ))
               }
-            </ul>
+            </VerticalTimeline>
           </ResumeContainer>
 		    </SectionContent>
 	    </SectionBlock>

@@ -1,4 +1,4 @@
-const resume = require('./resume');
+const resume = require('./resume');//An index.js file inside the folder will be used by default when we require a folder
 const languages = require('./languages');
 
 module.exports = {
@@ -6,7 +6,7 @@ module.exports = {
   author: {
     name: 'Marília Portela',
     homeCity: 'Fortaleza',
-	  homeCityLink: 'https://www.youtube.com/watch?v=yHQGUNmpJco',
+	  homeCityLink: 'https://www.youtube.com/watch?v=cG4K0NwffNI',
     email: 'mariliaportela@gmail.com',
     defaultLink: 'https://github.com/mariliap'
   },
