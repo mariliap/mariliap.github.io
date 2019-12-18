@@ -3,14 +3,14 @@ import PropTypes from 'prop-types';
 import ResumeContainer from './ResumeContainer';
 import { FormattedMessage, injectIntl } from 'react-intl';
 import styled from 'styled-components';
-import H2 from '../H2';
+import H2 from '../commons/H2';
 import Ca from '../flags/Ca';
 import Fr from '../flags/Fr';
 import Br from '../flags/Br';
 import Es from '../flags/Es';
 import SectionBlock from '../SectionBlock';
 import SectionContent from '../SectionContent';
-import Texture from '../Texture.js'
+import Texture from '../layout/Texture.js'
 import Helmet from 'react-helmet';
 
 const getFlag = (langKey) => {

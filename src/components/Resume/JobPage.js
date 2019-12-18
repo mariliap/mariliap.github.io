@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import H2 from '../H2';
-import H1 from '../H1';
+import H2 from '../commons/H2';
+import H1 from '../commons/H1';
 import { injectIntl, FormattedMessage } from 'react-intl';
 import Helmet from 'react-helmet';
 import JobDates from './JobDates';
@@ -11,7 +11,7 @@ import Projects from './Projects';
 import ResumeContainer from './ResumeContainer';
 import SectionBlock from '../SectionBlock';
 import SectionContent from '../SectionContent';
-import Texture from '../Texture.js'
+import Texture from '../layout/Texture.js'
 
 const Header = styled.header`
   padding-bottom: ${({ theme }) => theme.scale(1)};

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { injectIntl } from 'react-intl';
 import styled from 'styled-components';
 import { getJobUrl } from '../../data/resume/getJobUrl';
-import Link from '../Link';
+import Link from '../commons/Link';
 import JobDates from './JobDates';
 import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';

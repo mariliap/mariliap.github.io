@@ -1,17 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Posts from './Posts';
+import Posts from './blog/Posts';
 import SocialLinks from './SocialLinks';
 import Welcome from './Welcome';
-import BtnLink from './BtnLink';
+import BtnLink from './commons/BtnLink';
 import SectionBlock from './SectionBlock';
-import Technologies from './Resume/Technologies';
-import Codes from './Resume/Codes';
-import Link from './Link';
+import Technologies from './resume/Technologies';
+import Codes from './resume/Codes';
+import Link from './commons/Link';
 import { FormattedMessage } from 'react-intl';
 import styled from 'styled-components';
 import { injectGlobal, css, keyframes } from 'styled-components';
-import Texture from './Texture.js'
+import Texture from './layout/Texture.js'
 import Helmet from 'react-helmet';
 
 
@@ -124,9 +124,6 @@ const Index = (props) => {
 		  <SectionBlock  style={{backgroundColor: '#423575'}}  >
 				<Texture className="svg-background" width={'100%'} height={'100%'} data={{}} index={2}/>
 				<SectionContents>
-					http://graphicdesignjunction.com/2013/10/free-fonts-for-creative-designers/
-
-					http://www.heropatterns.com/
 				  <Codes projects={projects}>
 				  </Codes>
 				</SectionContents>

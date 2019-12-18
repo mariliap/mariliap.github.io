@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Link from './Link';
+import Link from '../commons/Link';
 import Menu from './Menu';
 import styled from 'styled-components';
-import SelectLanguage from './SelectLanguage';
+import SelectLanguage from '../SelectLanguage';
 import { FormattedMessage } from 'react-intl';
 
 

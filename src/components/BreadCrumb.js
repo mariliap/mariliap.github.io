@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Link from './Link';
+import Link from './commons/Link';
 import { FormattedMessage } from 'react-intl';
 import styled from 'styled-components';
 

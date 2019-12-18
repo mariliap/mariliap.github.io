@@ -1,5 +1,5 @@
 import React from 'react';
-import A from '../A';
+import A from '../commons/A';
 import { FormattedMessage } from 'react-intl';
 import PdfIcon from 'react-icons/lib/md/picture-as-pdf';
 import styled from 'styled-components';

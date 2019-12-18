@@ -2,15 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import EmailIcon from 'react-icons/lib/md/email';
 import PhoneIcon from 'react-icons/lib/md/phone-android';
-import H1 from './H1';
+import H1 from './commons/H1';
 import styled from 'styled-components';
 import Br from './flags/Br';
 import Ca from './flags/Ca';
-import A from './A';
+import A from './commons/A';
 import { FormattedMessage } from 'react-intl';
 import SectionBlock from './SectionBlock';
 import SectionContent from './SectionContent';
-import Texture from './Texture.js';
+import Texture from './layout/Texture.js';
 import Helmet from 'react-helmet';
 
 const getCountry = (country) => {

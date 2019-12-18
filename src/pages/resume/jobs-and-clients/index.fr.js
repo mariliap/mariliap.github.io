@@ -1,5 +1,5 @@
 import React from 'react';
-import JobsAndClientsPage from '../../../components/Resume/JobsAndClientsPage';
+import JobsAndClientsPage from '../../../components/resume/JobsAndClientsPage';
 import graphql from 'graphql';
 
 export default (props) =>

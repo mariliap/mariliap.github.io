@@ -14,7 +14,7 @@ module.exports = {
   menu: [
     {label: 'home', slug: '/'},
     {label: 'posts', slug: '/blog/'},
-    {label: 'tags', slug: '/tags/'},
+    /*{label: 'tags', slug: '/tags/'},*/
     {label: 'about', slug: '/about/'},
     {
       label: 'resume', 

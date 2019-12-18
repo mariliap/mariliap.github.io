@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import graphql from 'graphql';
 import Link from 'gatsby-link';
 import styled from 'styled-components';
-import PostList from '../components/PostList';
+import PostList from '../components/blog/PostList';
 import { FormattedMessage } from 'react-intl';
 import Helmet from 'react-helmet';
 

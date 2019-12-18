@@ -5,7 +5,7 @@ import graphql from 'graphql';
 const i18n = {
   description: (
     <p>
-      Hi! I am Marília, a Freelance Full-Stack Developer since 2007.
+      Hi! I am Marília, a Full-Stack Developer since 2007.
       My professional journey started when I was 14 years-old. 
       Since then, I have been passionate about programming.  <br /><br />
       

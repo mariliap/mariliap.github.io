@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import styled from 'styled-components';
-import Link from '../Link';
+import Link from '../commons/Link';
 import {getJobUrl} from '../../data/resume/getJobUrl';
 
 const Header = styled.header`

@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Link from '../components/Link';
+import Link from '../commons/Link';
 import styled from 'styled-components';
-import CleanTime from '../components/Time';
+import CleanTime from '../Time';
 
 const Li = styled.li`
   padding: ${props => props.theme.blog.list.item.padding};
@@ -89,7 +89,6 @@ const PostListItem = ({ post }) => {
         </Header>
 		    <Title>{post.frontmatter.title}</Title>
         <P>{post.excerpt}</P>
-		
       </Link>
     </Li>
   );

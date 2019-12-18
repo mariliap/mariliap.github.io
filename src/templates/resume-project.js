@@ -1,5 +1,5 @@
 import React from 'react';
-import ProjectPage from '../components/Resume/ProjectPage';
+import ProjectPage from '../components/resume/ProjectPage';
 import graphql from 'graphql';
 
 const ProjectRoute = (props) => (<ProjectPage {...props} />);

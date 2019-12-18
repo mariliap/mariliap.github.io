@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import H2 from '../H2';
+import H2 from '../commons/H2';
 import Code from './Code';
 import { FormattedMessage } from 'react-intl';
 

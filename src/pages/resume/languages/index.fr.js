@@ -1,5 +1,5 @@
 import React from 'react';
-import LanguagesPage from '../../../components/Resume/LanguagesPage';
+import LanguagesPage from '../../../components/resume/LanguagesPage';
 import graphql from 'graphql';
 
 export default (props) =>

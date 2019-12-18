@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import Checkbox from './Checkbox';
 import { FormattedMessage } from 'react-intl';
 import { pipe, not, any, contains } from 'ramda';
-import { InvisibleSpan } from './Invisible';
+import { InvisibleSpan } from '../Invisible';
 
 const Ul = styled.ul`
   padding: 0;

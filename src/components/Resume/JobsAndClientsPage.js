@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ResumeContainer from './ResumeContainer';
 import { FormattedMessage } from 'react-intl';
-import H2 from '../H2';
+import H2 from '../commons/H2';
 import JobsAndClient from './JobsAndClient';
 import SectionBlock from '../SectionBlock';
 import SectionContent from '../SectionContent';
-import Texture from '../Texture.js'
+import Texture from '../layout/Texture.js'
 import Helmet from 'react-helmet';
 import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';

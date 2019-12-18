@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Gravatar from 'react-gravatar';
-import HeartIcon from './HeartIcon';
-import FaGithub from 'react-icons/lib/fa/github';
-import A from './A';
 import styled from 'styled-components';
-import Ca from './flags/Ca';
-import Br from './flags/Br';
+import HeartIcon from '../icons/HeartIcon';
+import FaGithub from 'react-icons/lib/fa/github';
+import A from '../commons/A';
+import Ca from '../flags/Ca';
+import Br from '../flags/Br';
 import Texture from './Texture.js';
 
 const FooterMain = styled.footer`

@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Link from './Link';
+import Link from '../commons/Link';
 import PostList from './PostList';
-import BtnLink from './BtnLink';
-import H2 from './H2';
-import H1 from './H1';
+import BtnLink from '../commons/BtnLink';
+import H2 from '../commons/H2';
+import H1 from '../commons/H1';
 import { FormattedMessage } from 'react-intl';
 import styled from 'styled-components';
 

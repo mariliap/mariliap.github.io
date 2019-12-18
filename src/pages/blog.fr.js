@@ -1,5 +1,6 @@
 import React from 'react';
-import Blog from './_blog';
+//import Blog from './_blog';
+import Blog from '../components/BlogPage';
 import graphql from 'graphql';
 
 export default (props) => <Blog {...props} />;

@@ -4,12 +4,12 @@ import ResumeContainer from './ResumeContainer';
 import Technologies from './Technologies';
 import SectionBlock from '../SectionBlock';
 import SectionContent from '../SectionContent';
-import Texture from '../Texture.js'
+import Texture from '../layout/Texture.js'
 import { InvisibleSpan } from '../Invisible';
 import Select, {
   addAll,
   getItemsFromArray
-} from '../Select';
+} from '../commons/Select';
 import {
   contains,
   uniq,

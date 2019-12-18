@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import H2 from '../H2';
+import H2 from '../commons/H2';
 import Technology from './Technology';
 import Error from '../Error';
 import { FormattedMessage } from 'react-intl';
-import H1 from "../H1";
+import H1 from "../commons/H1";
 
 const Ul = styled.ul`
   display: flex;

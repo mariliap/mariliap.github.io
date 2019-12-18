@@ -4,7 +4,7 @@ import ResumeContainer from './ResumeContainer';
 import Educations from './Educations';
 import SectionBlock from '../SectionBlock';
 import SectionContent from '../SectionContent';
-import Texture from '../Texture.js'
+import Texture from '../layout/Texture.js'
 
 const EducationsPage = (props) => {
   const { educations, menu } = props.data.site.siteMetadata.resume;

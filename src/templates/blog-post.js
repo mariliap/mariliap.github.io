@@ -3,14 +3,14 @@ import PropTypes from 'prop-types';
 import graphql from 'graphql';
 import Helmet from 'react-helmet';
 import styled from 'styled-components';
-import EditBtn from '../components/EditBtn';
+import EditBtn from '../components/blog/EditBtn';
 import Tags from '../components/Tags';
 import { getStructuredData } from '../structuredData';
 import CleanTime from '../components/Time';
 import Comments from '../components/Comments';
-import Posts from '../components/Posts';
+import Posts from '../components/blog/Posts';
 import AnchorJS from 'anchor-js';
-import Texture from '../components/Texture';
+import Texture from '../components/layout/Texture';
 import { injectGlobal, css, keyframes } from 'styled-components';
 
 const Time = styled(CleanTime)`

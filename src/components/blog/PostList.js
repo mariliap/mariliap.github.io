@@ -4,7 +4,7 @@ import PostListItem from './PostListItem';
 import styled from 'styled-components';
 import {css} from 'styled-components';
 import { Scrollbars } from 'react-custom-scrollbars';
-import CleanTime from "./Time";
+import CleanTime from "../Time";
 
 const large = (...args) => css`
   @media screen and (min-width: 1201px) {

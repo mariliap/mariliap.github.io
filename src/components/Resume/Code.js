@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import A from '../A';
+import A from '../commons/A';
 
 const Li = styled.li`
   margin-top: ${({ theme }) => theme.scale(0)};

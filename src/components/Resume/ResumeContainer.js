@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Link from '../Link';
+import Link from '../commons/Link';
 import styled from 'styled-components';
 import { FormattedMessage, injectIntl } from 'react-intl';
 import BreadCrumb from '../BreadCrumb';

@@ -1,5 +1,5 @@
 import React from 'react';
-import JobPage from '../components/Resume/JobPage';
+import JobPage from '../components/resume/JobPage';
 import graphql from 'graphql';
 
 const JobRoute = (props) => (<JobPage {...props} />);

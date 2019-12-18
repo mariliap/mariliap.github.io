@@ -1,15 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import H1 from './H1';
+import H1 from './commons/H1';
 import { getAuthor } from '../data/authors';
 import { getStructuredDataForAuthor } from '../structuredData';
 import BigFirstLetter from './BigFirstLetter';
 import styled from 'styled-components';
 import { FormattedMessage } from 'react-intl';
-import ResumeContainer from './Resume/ResumeContainer';
+import ResumeContainer from './resume/ResumeContainer';
 import SectionBlock from './SectionBlock';
 import SectionContent from './SectionContent';
-import Texture from './Texture.js';
+import Texture from './layout/Texture.js';
 import Helmet from 'react-helmet';
 
 const Header = styled.header`
@@ -17,7 +17,7 @@ const Header = styled.header`
 `;
 
 const AboutPage = (props) => {
-  const author = getAuthor('angeloocana');
+  const author = getAuthor('mariliaportela');
 
   author.description = props.i18n.descriptionForGoogle;
   const { menu } = props.data.site.siteMetadata.resume;

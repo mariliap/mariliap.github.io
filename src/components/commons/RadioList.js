@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import Radio from './Radio';
 import { FormattedMessage } from 'react-intl';
 import { contains } from 'ramda';
-import { InvisibleSpan } from './Invisible';
+import { InvisibleSpan } from '../Invisible';
 
 const Ul = styled.ul`
     display: flex;

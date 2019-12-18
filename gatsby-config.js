@@ -44,8 +44,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'Ângelo Ocanã Software Development and Training',
-        short_name: 'Ângelo Ocanã',
+        name: 'Marília Portela Software Development and Training',
+        short_name: 'Marília Portela',
         icons: [
           {
             src: '/logo.svg',

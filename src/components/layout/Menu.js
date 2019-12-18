@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import MenuIcon from 'react-icons/lib/fa/bars';
-import { InvisibleSpan } from './Invisible';
+import { InvisibleSpan } from '../Invisible';
 import styled from 'styled-components';
 import Link from 'gatsby-link';
 import { endsWith } from 'ramda';
 import { injectIntl, FormattedMessage } from 'react-intl';
-import SelectLanguage from './SelectLanguage';
+import SelectLanguage from '../SelectLanguage';
 
 const CloseNav = styled.section`
   ${props => props.isOpen
@@ -24,7 +24,7 @@ const Nav = styled.nav`
   display:inline-block;
   top: 0;
   left: 2rem;  
-  width: 8em;
+  width: 5em;
   z-index: 11;
   border-right: ${props => props.isOpen 
 	? '40px solid #eeeeee'
@@ -45,7 +45,7 @@ const Nav = styled.nav`
     : props.theme.menu.closed.bg};
 
   ${props => props.isOpen
-    ? 'transform: translateX(+10%);'
+    ? 'transform: translateX(-20%);'
     : ''};
 
   @media (min-width: ${props => props.theme.maxWidth}) {

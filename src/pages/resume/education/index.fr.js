@@ -1,5 +1,5 @@
 import React from 'react';
-import EducationsPage from '../../../components/Resume/EducationsPage';
+import EducationsPage from '../../../components/resume/EducationsPage';
 import graphql from 'graphql';
 
 export default (props) =>

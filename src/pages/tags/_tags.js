@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Link from '../../components/Link';
+import Link from '../../components/commons/Link';
 import kebabCase from 'lodash/kebabCase';
-import H1 from '../../components/H1';
+import H1 from '../../components/commons/H1';
 import styled, {css} from 'styled-components';
 import { FormattedMessage } from 'react-intl';
 import Helmet from 'react-helmet';
-import Texture from '../../components/Texture.js';
+import Texture from '../../components/layout/Texture.js';
 import { Scrollbars } from 'react-custom-scrollbars';
 
 const small = (...args) => css`
