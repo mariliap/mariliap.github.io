@@ -5,6 +5,7 @@ import SocialLinks from './SocialLinks';
 import Welcome from './Welcome';
 import BtnLink from './commons/BtnLink';
 import SectionBlock from './SectionBlock';
+import SectionContent from './SectionContent';
 import Technologies from './resume/Technologies';
 import Codes from './resume/Codes';
 import Link from './commons/Link';
@@ -101,16 +102,16 @@ const Index = (props) => {
     <div>
 	    <SectionBlock  style={{backgroundColor: '#266ABB'}}  >
 				<Texture className="svg-background" width={'100%'} height={'100%'} data={{}} index={3}/>
-				<SectionContents>
+				<SectionContent>
 					<SocialLinks />
 					<Welcome currentLangKey={langKey} />
-				</SectionContents>
+				</SectionContent>
 	    </SectionBlock>
       
 		  <SectionBlock  style={{backgroundColor: '#48A6A7'}}  >
 				<Texture className="svg-background" width={'100%'} height={'100%'} data={{}} index={1}/>
-				<SectionContents>
-					<Technologies technologies={pinnedTechnologies} />
+				<SectionContent>
+					<Technologies technologies={pinnedTechnologies} langKey={langKey}/>
 					<FormattedMessage id="resume.technologies.seeMore">
 						{(txt) => (
 						  <BtnLink to={`/${langKey}/resume/`}>
@@ -118,26 +119,26 @@ const Index = (props) => {
 						  </BtnLink>
 						)}
 					</FormattedMessage>
-				</SectionContents>
+				</SectionContent>
 		  </SectionBlock>
 	  
 		  <SectionBlock  style={{backgroundColor: '#423575'}}  >
 				<Texture className="svg-background" width={'100%'} height={'100%'} data={{}} index={2}/>
-				<SectionContents>
-				  <Codes projects={projects}>
+				<SectionContent>
+				  <Codes projects={projects} langKey={langKey}>
 				  </Codes>
-				</SectionContents>
+				</SectionContent>
 		  </SectionBlock>
 	  	  
 		  <SectionBlock  style={{backgroundColor: '#C5C3A0'}}  >
 				<Texture className="svg-background" width={'100%'} height={'100%'} data={{}} index={0}/>
-			  <SectionContents>
+			  <SectionContent>
 					<Posts
 						posts={posts}
 						langKey={langKey}
 						showBtnMorePosts
 					/>
-				</SectionContents>
+				</SectionContent>
 		  </SectionBlock>
     </div>
   );

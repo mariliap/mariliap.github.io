@@ -24,6 +24,9 @@ module.exports = {
 
   'resume': `Résumé`,
 
+  'resume.bio': 'Bio',
+  'resume.bio.more': 'Un peu plus à propos de moi',
+
   'resume.downloadPdf': 'Télécharger le CV',
 
   'resume.technologies': 'Les technologies',

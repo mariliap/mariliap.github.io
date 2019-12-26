@@ -1,9 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import Link from '../commons/Link';
 import H2 from '../commons/H2';
 import Code from './Code';
 import { FormattedMessage } from 'react-intl';
+
+const SectionTop = styled.div`
+    margin-bottom: ${props => props.theme.blog.list.ul.margin};
+`;
 
 const Ul = styled.ul`
   display: flex;
@@ -13,21 +18,21 @@ const Ul = styled.ul`
   padding: 0;
 `;
 
-const Codes = ({ projects }) => {
+const Codes = (props) => {
   return (
     <section>
-      <header>
-        <FormattedMessage id="resume.projects">
-          {(txt) => (
-            <H2>
-              {txt}
-            </H2>
-          )}
-        </FormattedMessage>
-      </header>
+      <SectionTop>
+        <Link to={`/${props.langKey}/projects/`}>
+          <FormattedMessage id="resume.projects">
+            {(txt) => (
+              <H2>{txt}</H2>
+            )}
+          </FormattedMessage>
+        </Link>
+      </SectionTop>
       <Ul>
         {
-	        projects.map((game, i) =>
+	        props.projects.map((game, i) =>
             <Code
               key={i}
               {...game}

@@ -24,14 +24,22 @@ const Nav = styled.nav`
   display:inline-block;
   top: 0;
   left: 2rem;  
-  width: 5em;
   z-index: 11;
   border-right: ${props => props.isOpen 
-	? '40px solid #eeeeee'
-	: ''};
+	? '40px solid rgba(238,238,238, .5)'
+  : ''};
+  background-clip: padding-box; 
   padding: ${props => props.theme.menu.padding};
   transition-timing-function: ease-in, step-start, cubic-bezier(0.1, 0.7, 1.0, 0.1);
-  
+  ${props => props.theme.small`
+    width: 10px;
+  `};
+  ${props => props.theme.medium`
+    width: 38px;
+  `};
+  ${props => props.theme.large`
+    width: 76px;
+  `};
   ${props => props.isOpen
     ? `height: 100%;`
     : `height: 2rem;`}; 

@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+
 const SectionContent = styled.div`
   ${props => props.theme.small`
     padding: ${props => props.theme.spacing.half} ${props => props.theme.spacing.half};
