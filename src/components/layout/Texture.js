@@ -1,9 +1,9 @@
-import React from 'react'
-import * as d3 from 'd3'
-import textures from 'textures'
+import React from 'react';
+import * as d3 from 'd3';
+import textures from 'textures';
 import styled from 'styled-components';
 
-import ReactFauxDOM from 'react-faux-dom'
+import ReactFauxDOM from 'react-faux-dom';
 
 const TextureWrapper = styled.div`
   svg {
@@ -18,56 +18,56 @@ const TextureWrapper = styled.div`
   }
 `;
 
-class Texture extends React.Component {
+export default class Texture extends React.Component {
   render () {
     // Create your element.
-    var node = ReactFauxDOM.createElement('svg')
-    var d3svg = d3.select(node)
+    var node = ReactFauxDOM.createElement('svg');
+    var d3svg = d3.select(node);
     // Change stuff using actual DOM functions.
     // Even perform CSS selections!
     // el.style.setProperty('color', 'red')
     // el.setAttribute('class', 'box')
 
-      // .attr("viewBox", "0 0 100 100")
-      // .attr("preserveAspectRatio", "none")
-    let t
+    // .attr("viewBox", "0 0 100 100")
+    // .attr("preserveAspectRatio", "none")
+    let t;
 
-	//switch(this.props.options.index) {
-	switch(this.props.index) {
+    //switch(this.props.options.index) {
+    switch(this.props.index) {
     //switch(2) {
 
       case 0: 
         t = textures.circles()
           .radius(4)
-          .fill("transparent")
-          .stroke("rgba(0,0,0,0.13)")
+          .fill('transparent')
+          .stroke('rgba(0,0,0,0.13)')
           .size(20)
-          .strokeWidth(1)
-      break
+          .strokeWidth(1);
+        break;
 
       case 1:
         t = textures.paths()
-          .d("woven")
+          .d('woven')
           .lighter()
-          .stroke("rgba(0,0,0,0.1)")
-          .size(20)
-      break
+          .stroke('rgba(0,0,0,0.1)')
+          .size(20);
+        break;
 
       case 2:
         t = textures.paths()
-          .d("nylon")
+          .d('nylon')
           .lighter()
-          .stroke("rgba(0,0,0,0.1)")
-          .size(30)
-      break
+          .stroke('rgba(0,0,0,0.1)')
+          .size(30);
+        break;
 
       case 3:
         t = textures.paths()
-          .d("caps")
+          .d('caps')
           .lighter()
-          .stroke("rgba(0,0,0,0.1)")
-          .size(20)
-      break
+          .stroke('rgba(0,0,0,0.1)')
+          .size(20);
+        break;
 
       case 4:
         // t = textures.paths()
@@ -77,8 +77,8 @@ class Texture extends React.Component {
         //   .size(20)
         t = textures.circles()
           .lighter()
-          .fill("rgba(0,0,0,0.3)")
-      break
+          .fill('rgba(0,0,0,0.3)');
+        break;
 
       case 5:
         // t = textures.paths()
@@ -87,32 +87,30 @@ class Texture extends React.Component {
         //   .stroke("rgba(0,0,0,0.1)")
         //   .size(20)
         t = textures.paths()
-          .d("squares")
+          .d('squares')
           .lighter()
-          .stroke("rgba(0,0,0,0.08)")
+          .stroke('rgba(0,0,0,0.08)');
 
-      break
+        break;
 
       case 6:
         t = textures.paths()
-          .d("crosses")
+          .d('crosses')
           .lighter()
-          .stroke("rgba(255,255,255,0.08)")
-          .size(20)
-      break
+          .stroke('rgba(255,255,255,0.08)')
+          .size(20);
+        break;
     }
 
     d3svg.call(t);
 
-    d3svg.append("rect")
-      .attr("x", 0)
-      .attr("y", 0)
-      .attr("height",  this.props.height)
-      .attr("width", this.props.width)
-      .style("fill", t.url())
-      // Render it to React elements.
-    return <TextureWrapper>{node.toReact()}</TextureWrapper>
+    d3svg.append('rect')
+      .attr('x', 0)
+      .attr('y', 0)
+      .attr('height',  this.props.height)
+      .attr('width', this.props.width)
+      .style('fill', t.url());
+    // Render it to React elements.
+    return <TextureWrapper>{node.toReact()}</TextureWrapper>;
   }
 }
-
-export default Texture

@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 const SectionBlock = styled.section`
-	background-color:  ${props => props.backgroundColor};
-	${props => props.theme.small`
+  background-color:  ${props => props.backgroundColor};
+  ${props => props.theme.small`
     padding: 10px 10px 10px 10px;
   `};
   ${props => props.theme.medium`

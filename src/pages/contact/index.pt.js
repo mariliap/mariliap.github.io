@@ -1,6 +1,6 @@
 import React from 'react';
 import Contact from '../../components/Contact';
-import graphql from 'graphql';
+import {graphql} from 'gatsby';
 
 export default (props) => <Contact {...props} />;
 

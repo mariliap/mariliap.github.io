@@ -1,9 +1,14 @@
 import React from 'react';
 //import Blog from './_blog';
 import Blog from '../components/BlogPage';
-import graphql from 'graphql';
+import {graphql} from 'gatsby';
+import Layout from '../layouts/_layout';
+import messages from '../data/messages/en';
 
-export default (props) => <Blog {...props} />;
+export default (props) => (
+  <Layout {...props} i18nMessages={messages}>
+    <Blog {...props} />
+  </Layout>);
 
 export const pageQuery = graphql`
   query BlogFrQuery {
@@ -31,6 +36,45 @@ export const pageQuery = graphql`
             }
           },
           excerpt
+        }
+      }
+    }
+    site{
+      siteMetadata{
+        languages {
+          defaultLangKey
+          langs
+        }
+        author {
+          name
+          homeCity
+          homeCityLink
+          email
+          defaultLink
+        }
+        sourceCodeLink
+        menu {
+          label
+          link
+          slug
+          items{
+            label
+            slug
+          }
+        }
+        resume{
+          pinnedTechnologies{
+            name,
+            tags,
+            level,
+            years,
+            img
+          }
+          projects{
+            name,
+            link,
+            img
+          }
         }
       }
     }

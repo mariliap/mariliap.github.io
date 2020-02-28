@@ -1,8 +1,14 @@
 import React from 'react';
 import Index from '../components/IndexPage';
-import graphql from 'graphql';
+import {graphql} from 'gatsby';
+import Layout from '../layouts/_layout';
+import messages from '../data/messages/en';
+import theme from '../themes/theme';
 
-export default (props) => <Index {...props} />;
+export default (props) => (
+  <Layout {...props} i18nMessages={messages}>
+    <Index {...props} />
+  </Layout>);
 
 export const pageQuery = graphql`
   query IndexEnQuery {
@@ -30,6 +36,27 @@ export const pageQuery = graphql`
     }
     site{
       siteMetadata{
+        languages {
+          defaultLangKey
+          langs
+        }
+        author {
+          name
+          homeCity
+          homeCityLink
+          email
+          defaultLink
+        }
+        sourceCodeLink
+        menu {
+          label
+          link
+          slug
+          items{
+            label
+            slug
+          }
+        }
         resume{
           pinnedTechnologies{
             name,

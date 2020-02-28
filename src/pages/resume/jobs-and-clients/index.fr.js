@@ -1,6 +1,6 @@
 import React from 'react';
 import JobsAndClientsPage from '../../../components/resume/JobsAndClientsPage';
-import graphql from 'graphql';
+import {graphql} from 'gatsby';
 
 export default (props) =>
   <JobsAndClientsPage

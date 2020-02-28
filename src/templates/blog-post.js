@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import graphql from 'graphql';
+import {graphql} from 'gatsby';
 import Helmet from 'react-helmet';
-import styled from 'styled-components';
+import styled, {css} from 'styled-components';
 import EditBtn from '../components/blog/EditBtn';
 import Tags from '../components/Tags';
 import { getStructuredData } from '../structuredData';
@@ -11,7 +11,8 @@ import Comments from '../components/Comments';
 import Posts from '../components/blog/Posts';
 import AnchorJS from 'anchor-js';
 import Texture from '../components/layout/Texture';
-import { injectGlobal, css, keyframes } from 'styled-components';
+
+
 
 const Time = styled(CleanTime)`
   text-align: center;
@@ -264,7 +265,8 @@ const getYoutube = (markdownRemark) => {
         height="315"
         src={'https://www.youtube.com/embed/' + youtubeId}
         frameBorder="0"
-        allowFullScreen />
+        allowFullScreen
+      />
     )
     : null;
 };
@@ -278,10 +280,10 @@ class BlogPostRoute extends React.PureComponent {
 
   render(){
     const { markdownRemark } = this.props.data;
-    const { langKey } = this.props.pathContext;
+    const { langKey } = this.props.pageContext;
     const youtube = getYoutube(markdownRemark);
     const structuredData = getStructuredData(markdownRemark);
-    const url = `https://angeloocana.com${markdownRemark.fields.slug}`;
+    const url = `https://mariliaportela.com${markdownRemark.fields.slug}`;
   
     const tags = (
       <Tags tags={markdownRemark.fields.tagSlugs} />
@@ -289,7 +291,7 @@ class BlogPostRoute extends React.PureComponent {
   
     return (
       <PostBlock>
-	      <Texture className="svg-background" width={'100%'} height={'100%'} data={{}} index={0}/>
+        <Texture className="svg-background" width="100%" height="100%" data={{}} index={0} />
         <Post>
           <Helmet
             title={`${markdownRemark.frontmatter.title}`}
@@ -318,12 +320,12 @@ class BlogPostRoute extends React.PureComponent {
           <Content dangerouslySetInnerHTML={{ __html: markdownRemark.html }} />
           {/*<SectionSeparator/>*/}
           {/*<Comments*/}
-            {/*shortname="angeloocana-com"*/}
-            {/*identifier={markdownRemark.fields.slug}*/}
-            {/*title={markdownRemark.frontmatter.title}*/}
-            {/*url={url}*/}
+          {/*shortname="angeloocana-com"*/}
+          {/*identifier={markdownRemark.fields.slug}*/}
+          {/*title={markdownRemark.frontmatter.title}*/}
+          {/*url={url}*/}
           {/*/>*/}
-	        <SectionSeparator/>
+          <SectionSeparator />
           {tags}
           <Posts
             posts={markdownRemark.fields.readNextPosts}
@@ -339,7 +341,7 @@ class BlogPostRoute extends React.PureComponent {
 
 BlogPostRoute.propTypes = {
   data: PropTypes.object,
-  pathContext: PropTypes.object
+  pageContext: PropTypes.object
 };
 
 export default BlogPostRoute;

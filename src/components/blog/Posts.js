@@ -36,8 +36,8 @@ const Posts = (props) => {
           </FormattedMessage>
         </Link>
       </SectionTop>
-      <PostList {...props}/>
-     {/*{btnMorePosts}*/}
+      <PostList {...props} />
+      {/*{btnMorePosts}*/}
     </section>
   );
 };

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-class Html extends React.PureComponent {
+export default class Html extends React.PureComponent {
   static propTypes = {
     headComponents: PropTypes.array,
     body: PropTypes.string,
@@ -67,5 +67,3 @@ class Html extends React.PureComponent {
     );
   }
 }
-
-module.exports = Html;

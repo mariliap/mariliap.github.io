@@ -1,6 +1,6 @@
 import React from 'react';
 import JobPage from '../components/resume/JobPage';
-import graphql from 'graphql';
+import {graphql} from 'gatsby';
 
 const JobRoute = (props) => (<JobPage {...props} />);
 

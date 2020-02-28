@@ -64,20 +64,24 @@ import Texture from '../components/layout/Texture.js';
 //   width: 100%;
 // `;
 
+// Acessar a propriedade theme do styleComponent, que foi criada pelo ThemeProvider:
+//Ver linha 76: backgroundColor={({ theme }) => theme.colors.blueishGreyPaletteSand}
+
 const Blog = (props) => {
+  console.log(props);
   const posts = props.data.allMarkdownRemark.edges.map(p => p.node);
-  const { langKey } = props.pathContext;
+  const { langKey } = props.pageContext;
   return (
-	  <div>
-		  <SectionBlock className="posts" backgroundColor={({ theme }) => theme.colors.blueishGreyPaletteSand} >
-			  <Texture className="svg-background" width={'100%'} height={'100%'} data={{}} index={3}/>
-			  <SectionContent>
-                  <Posts
-						posts={posts}
-						langKey={langKey}
-						showBtnMorePosts
-				   />
-                  {/*  
+    <div>
+      <SectionBlock className="posts" backgroundColor={({ theme }) => theme.colors.blueishGreyPaletteSand}>
+        <Texture className="svg-background" width="100%" height="100%" data={{}} index={3} />
+        <SectionContent>
+          <Posts
+            posts={posts}
+            langKey={langKey}
+            showBtnMorePosts
+          />
+          {/*  
 				  <FormattedMessage id="posts">
 					  {(txt) => (
 						  <header>
@@ -95,9 +99,9 @@ const Blog = (props) => {
 					  posts={props.data.allMarkdownRemark.edges.map(p => p.node)}
 				  />
                   */}
-			  </SectionContent>
-		  </SectionBlock>
-	  </div>
+        </SectionContent>
+      </SectionBlock>
+    </div>
   );
 };
 

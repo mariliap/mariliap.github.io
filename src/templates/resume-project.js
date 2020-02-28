@@ -1,6 +1,6 @@
 import React from 'react';
 import ProjectPage from '../components/resume/ProjectPage';
-import graphql from 'graphql';
+import {graphql} from 'gatsby';
 
 const ProjectRoute = (props) => (<ProjectPage {...props} />);
 

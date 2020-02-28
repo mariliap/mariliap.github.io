@@ -27,8 +27,8 @@ const colors = {
   blueishGreyPaletteGreen: '#48A6A7',
   blueishGreyPalettePurple: '#423575',
   blueishGreyPaletteSand: '#C5C3A0',
-  blueishGreyPalletePink:'#f92672',
-  blueishGreyPalleteBlueText:'#2895f2',
+  blueishGreyPalletePink: '#f92672',
+  blueishGreyPalleteBlueText: '#2895f2',
 
   blackShades: [
     '#32342D',
@@ -38,37 +38,37 @@ const colors = {
 const fontFamily = '"Space Mono", "monospace", sans-serif'; // '"Cambo", serif';
 
 const spacing = {
-  quarter: "10px",
-  half: "20px",
-  single: "40px",
-  double: "80px"
+  quarter: '10px',
+  half: '20px',
+  single: '40px',
+  double: '80px'
 };
 
 const small = (...args) => css`
   @media screen and (max-width: 600px) {
     ${ css(...args) }
   }
-`
+`;
 const medium = (...args) => css`
   @media screen and (min-width: 601px) and (max-width: 1200px) {
     ${ css(...args) }
   }
-`
+`;
 const large = (...args) => css`
   @media screen and (min-width: 1201px) {
     ${ css(...args) }
   }
-`
+`;
 
 
 const theme = {
   scale,
   scaleN,
-	spacing,
+  spacing,
   colors,
-	small,
-	medium,
-	large,
+  small,
+  medium,
+  large,
   fontFamily,
   color: colors.white,
   bg: colors.blueishGrey,
@@ -192,7 +192,7 @@ const theme = {
     margin: `${scale(1)} 0 0 0`,
     textAlign: 'center'
   },
-  resume:{
+  resume: {
 	  projetos: {
 	    h1: {
 		    fontSize: scale(1),
@@ -218,7 +218,7 @@ const theme = {
       },
       ul: {
         padding: scale(4),
-        margin:  scale(6),
+        margin: scale(6),
         width: scale(10),
       },
       item: {

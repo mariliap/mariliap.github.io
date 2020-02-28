@@ -8,37 +8,35 @@ import SectionBlock from './SectionBlock';
 import SectionContent from './SectionContent';
 import Technologies from './resume/Technologies';
 import Codes from './resume/Codes';
-import Link from './commons/Link';
 import { FormattedMessage } from 'react-intl';
-import styled from 'styled-components';
-import { injectGlobal, css, keyframes } from 'styled-components';
-import Texture from './layout/Texture.js'
-import Helmet from 'react-helmet';
+import styled, {css}  from 'styled-components';
+
+import Texture from './layout/Texture.js';
 
 
 
 const spacing = {
-  quarter: "10px",
-  half: "20px",
-  single: "40px",
-  double: "80px"
-}
+  quarter: '10px',
+  half: '20px',
+  single: '40px',
+  double: '80px'
+};
 
 const small = (...args) => css`
   @media screen and (max-width: 600px) {
     ${ css(...args) }
   }
-`
+`;
 const medium = (...args) => css`
   @media screen and (min-width: 601px) and (max-width: 1200px) {
     ${ css(...args) }
   }
-`
+`;
 const large = (...args) => css`
   @media screen and (min-width: 1201px) {
     ${ css(...args) }
   }
-`
+`;
 
 
 
@@ -94,59 +92,59 @@ const Items = styled.div`
 
 
 const Index = (props) => {
+  console.log(props);
   const posts = props.data.allMarkdownRemark.edges.map(p => p.node);
-  const { langKey } = props.pathContext;
+  const { langKey } = props.pageContext;
   const { pinnedTechnologies, projects } = props.data.site.siteMetadata.resume;
 
   return (
     <div>
-	    <SectionBlock  style={{backgroundColor: '#266ABB'}}  >
-				<Texture className="svg-background" width={'100%'} height={'100%'} data={{}} index={3}/>
-				<SectionContent>
-					<SocialLinks />
-					<Welcome currentLangKey={langKey} />
-				</SectionContent>
-	    </SectionBlock>
-      
-		  <SectionBlock  style={{backgroundColor: '#48A6A7'}}  >
-				<Texture className="svg-background" width={'100%'} height={'100%'} data={{}} index={1}/>
-				<SectionContent>
-					<Technologies technologies={pinnedTechnologies} langKey={langKey}/>
-					<FormattedMessage id="resume.technologies.seeMore">
-						{(txt) => (
-						  <BtnLink to={`/${langKey}/resume/`}>
-							{txt}
-						  </BtnLink>
-						)}
-					</FormattedMessage>
-				</SectionContent>
-		  </SectionBlock>
-	  
-		  <SectionBlock  style={{backgroundColor: '#423575'}}  >
-				<Texture className="svg-background" width={'100%'} height={'100%'} data={{}} index={2}/>
-				<SectionContent>
-				  <Codes projects={projects} langKey={langKey}>
-				  </Codes>
-				</SectionContent>
-		  </SectionBlock>
-	  	  
-		  <SectionBlock  style={{backgroundColor: '#C5C3A0'}}  >
-				<Texture className="svg-background" width={'100%'} height={'100%'} data={{}} index={0}/>
-			  <SectionContent>
-					<Posts
-						posts={posts}
-						langKey={langKey}
-						showBtnMorePosts
-					/>
-				</SectionContent>
-		  </SectionBlock>
+      <SectionBlock style={{backgroundColor: '#266ABB'}} >
+        <Texture className="svg-background" width="100%" height="100%" data={{}} index={3} />
+        <SectionContent>
+          <SocialLinks />
+          <Welcome currentLangKey={langKey} />
+        </SectionContent>
+      </SectionBlock>
+
+      <SectionBlock style={{backgroundColor: '#48A6A7'}} >
+        <Texture className="svg-background" width="100%" height="100%" data={{}} index={1} />
+        <SectionContent>
+          <Technologies technologies={pinnedTechnologies} langKey={langKey} />
+          <FormattedMessage id="resume.technologies.seeMore">
+            {(txt) => (
+              <BtnLink to={`/${langKey}/resume/`}>
+                {txt}
+              </BtnLink>
+            )}
+          </FormattedMessage>
+        </SectionContent>
+      </SectionBlock>
+
+      <SectionBlock style={{backgroundColor: '#423575'}}>
+        <Texture className="svg-background" width="100%" height="100%" data={{}} index={2} />
+        <SectionContent>
+          <Codes projects={projects} langKey={langKey} />
+        </SectionContent>
+      </SectionBlock>
+
+      <SectionBlock style={{backgroundColor: '#C5C3A0'}}>
+        <Texture className="svg-background" width="100%" height="100%" data={{}} index={0} />
+        <SectionContent>
+          <Posts
+            posts={posts}
+            langKey={langKey}
+            showBtnMorePosts
+          />
+        </SectionContent>
+      </SectionBlock>
     </div>
   );
 };
 
 Index.propTypes = {
   data: PropTypes.object.isRequired,
-  pathContext: PropTypes.object.isRequired
+  pageContext: PropTypes.object.isRequired
 };
 
 export default Index;

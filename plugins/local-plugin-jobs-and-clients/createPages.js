@@ -55,8 +55,8 @@ const createPageForEach = (createPage, components) => forEach(({ path, context, 
   });
 });
 
-const createPages = ({ graphql, boundActionCreators }, pluginOptions) => {
-  const { createPage } = boundActionCreators;
+const createPages = ({ graphql, actions }, pluginOptions) => {
+  const { createPage } = actions;
   const options = {
     ...defaultOptions,
     ...pluginOptions

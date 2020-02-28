@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import MenuIcon from 'react-icons/lib/fa/bars';
 import { InvisibleSpan } from '../Invisible';
 import styled from 'styled-components';
-import Link from 'gatsby-link';
+import {Link} from 'gatsby';
 import { endsWith } from 'ramda';
 import { injectIntl, FormattedMessage } from 'react-intl';
 import SelectLanguage from '../SelectLanguage';
@@ -26,8 +26,8 @@ const Nav = styled.nav`
   left: 2rem;  
   z-index: 11;
   border-right: ${props => props.isOpen 
-	? '40px solid rgba(238,238,238, .5)'
-  : ''};
+    ? '40px solid rgba(238,238,238, .5)'
+    : ''};
   background-clip: padding-box; 
   padding: ${props => props.theme.menu.padding};
   transition-timing-function: ease-in, step-start, cubic-bezier(0.1, 0.7, 1.0, 0.1);
@@ -181,8 +181,7 @@ class Menu extends React.PureComponent {
                   <MenuLink selected={isSelected(slug)} to={slug} onClick={this.open}>
                     {label}
                   </MenuLink>
-                )
-            }
+                )}
           </FormattedMessage>
           {subItems}
         </li>
@@ -191,29 +190,32 @@ class Menu extends React.PureComponent {
   }
 
   render() {
+    console.log(this.props);
     const { isOpen } = this.state;
     const isSelected = endsWith(this.props.url);
     const menuItems = this.getMenuItems(isSelected, this.props.menu, this.props.intl.locale);
-		const langs = this.props.langs;
-	
+    const langs = this.props.langs;
+
     return (
       <section>
         <CloseNav isOpen={isOpen} onClick={this.open} />
         <Nav isOpen={isOpen}>
-				  <Subnav isOpen={isOpen} langs={langs}>
-					  <MenuLabel htmlFor="cb-menu">
-							<MenuIcon />
-							<InvisibleSpan>Menu</InvisibleSpan>
-							<Checkbox type="checkbox" name="cb-menu" id="cb-menu"
-						    checked={this.state.isOpen}
-						    onChange={this.open}/>
-					    </MenuLabel>
-					  <SelectLanguage langs={langs} isOpen={isOpen} className="select-languages" />
-				  </Subnav>
-	        <Ul isOpen={isOpen}>
-					  {menuItems}
-					</Ul>
-				</Nav>
+          <Subnav isOpen={isOpen} langs={langs}>
+            <MenuLabel htmlFor="cb-menu">
+              <MenuIcon />
+              <InvisibleSpan>Menu</InvisibleSpan>
+              <Checkbox
+                type="checkbox" name="cb-menu" id="cb-menu"
+                checked={this.state.isOpen}
+                onChange={this.open}
+              />
+            </MenuLabel>
+            <SelectLanguage langs={langs} isOpen={isOpen} className="select-languages" />
+          </Subnav>
+          <Ul isOpen={isOpen}>
+            {menuItems}
+          </Ul>
+        </Nav>
 		
       </section>
     );

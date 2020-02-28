@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import graphql from 'graphql';
-import Link from 'gatsby-link';
+import { Link, graphql } from 'gatsby';
 import styled from 'styled-components';
 import PostList from '../components/blog/PostList';
 import { FormattedMessage } from 'react-intl';
@@ -35,14 +34,14 @@ const AllTagsLink = styled(Link)`
   }
 `;
 
-const TagRoute = ({ data, pathContext }) => {
+const TagRoute = ({ data, pageContext }) => {
   const posts = data.allMarkdownRemark.edges.map(p => p.node);
 
   const allTagsLink = (
-    <FormattedMessage id="tags.allTagsLink" >
+    <FormattedMessage id="tags.allTagsLink">
       {(txt) => (
         <AllTagsLink
-          to={`/${pathContext.langKey}/tags/`}
+          to={`/${pageContext.langKey}/tags/`}
         >
           {txt}
         </AllTagsLink>
@@ -56,7 +55,7 @@ const TagRoute = ({ data, pathContext }) => {
         <FormattedMessage id="tags">
           {(txt) => (
             <Helmet
-              title={`${pathContext.tag} | ${txt}`}
+              title={`${pageContext.tag} | ${txt}`}
               meta={[{ name: 'description', content: txt }]}
             />
           )}
@@ -65,7 +64,7 @@ const TagRoute = ({ data, pathContext }) => {
           id="tags.nPostsTaggedWith"
           values={{ nPosts: data.allMarkdownRemark.totalCount }}
         />
-        <TagName>“{pathContext.tag}”</TagName>
+        <TagName>“{pageContext.tag}”</TagName>
         {allTagsLink}
       </Header>
       <PostList
@@ -80,7 +79,7 @@ const TagRoute = ({ data, pathContext }) => {
 
 TagRoute.propTypes = {
   data: PropTypes.object,
-  pathContext: PropTypes.object
+  pageContext: PropTypes.object
 };
 
 export default TagRoute;

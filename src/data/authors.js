@@ -48,7 +48,7 @@ const authors = {
   }
 };
 
-const getAuthor = (id) => {
+export const getAuthor = (id) => {
   const author = {
     ...authors[id],
     '@type': 'Person'

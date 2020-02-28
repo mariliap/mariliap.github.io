@@ -1,7 +1,6 @@
 import React from 'react';
-import graphql from 'graphql';
+import {graphql, navigate, withPrefix} from 'gatsby';
 import { getUserLangKey } from 'ptz-i18n';
-import { withPrefix } from 'gatsby-link';
 
 class RedirectIndex extends React.PureComponent {
   constructor(args) {
@@ -18,8 +17,12 @@ class RedirectIndex extends React.PureComponent {
       // https://github.com/gatsbyjs/gatsby/tree/master/examples/using-redirects
       // But Gatsby Redirects are static, they need to be specified at build time,
       // This redirect is dynamic, It needs to know the user browser language.
-      // Any ideias? Join the issue: https://github.com/angeloocana/gatsby-starter-default-i18n/issues/4
-      window.___history.replace(homeUrl);
+      //window.___history.replace(homeUrl);
+      //console.log('teste');
+      //console.log(`HOMEURL2 ${homeUrl}`);
+      //console.log(`HOMEURL3 ${homeUrl}`);
+
+      navigate(homeUrl);
     }
   }
 

@@ -13,6 +13,7 @@ import {
   getCurrentLangKey,
   isHomePage
 } from 'ptz-i18n';
+import Index from '../components/IndexPage';
 
 const Background = styled.div`
   background-color: ${props => props.theme.bg};
@@ -48,11 +49,10 @@ const Wrapper = (props) => {
 
   const {menu, author, sourceCodeLink} = props.data.site.siteMetadata;
 
+
   return (
     <ThemeProvider theme={theme}>
-      <IntlProvider 
-        locale={langKey} 
-        messages={props.i18nMessages}>
+      <IntlProvider locale={langKey} messages={props.i18nMessages}>
         <Background>
           <BodyContainer>
             <Header
@@ -60,10 +60,10 @@ const Wrapper = (props) => {
               langs={langsMenu}
               homeLink={homeLink}
               url={url}
-              menu={menu}    
+              menu={menu}
             />
             <main>
-              {children()}
+              {children}
             </main>
             <Footer
               currentLangKey={langKey}

@@ -25,7 +25,7 @@ const getBreadCrumb = (langKey) => [
 ];
 
 const Job = (props) => {
-  const {job} = props.pathContext;
+  const {job} = props.pageContext;
   const {menu} = props.data.site.siteMetadata.resume;
 
   const description = job.description;
@@ -65,7 +65,7 @@ const Job = (props) => {
 
 Job.propTypes = {  
   intl: PropTypes.object.isRequired,
-  pathContext: PropTypes.shape({
+  pageContext: PropTypes.shape({
     job: PropTypes.shape({
       name: PropTypes.string
     })

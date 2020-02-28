@@ -1,6 +1,6 @@
 import React from 'react';
 import TagsPageRoute from './_tags';
-import graphql from 'graphql';
+import {graphql} from 'gatsby';
 
 export default (props) => <TagsPageRoute {...props} />;
 

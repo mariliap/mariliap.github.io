@@ -1,6 +1,6 @@
 import React from 'react';
 import AboutMe from '../../components/AboutPage';
-import graphql from 'graphql';
+import {graphql} from 'gatsby';
 
 const i18n = {
   description: (

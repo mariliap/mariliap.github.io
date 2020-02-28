@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import H1 from './commons/H1';
-import { getAuthor } from '../data/authors';
+import  getAuthor  from '../data/authors';
 import { getStructuredDataForAuthor } from '../structuredData';
 import BigFirstLetter from './BigFirstLetter';
 import styled from 'styled-components';
@@ -26,34 +26,34 @@ const AboutPage = (props) => {
 
   return (
     <div>
-      <SectionBlock className="posts" backgroundColor={({ theme }) => theme.colors.blueishGreyPaletteSand} >
-          <Texture className="svg-background" width={'100%'} height={'100%'} data={{}} index={3}/>
-          <SectionContent>
-            <ResumeContainer menu={menu} selectedPage="/about/">
-              <BigFirstLetter>
-                <script
-                  type="application/ld+json"
-                  dangerouslySetInnerHTML={{ __html: structuredData }}
-                />
-                <FormattedMessage id="about">
-                  {(txt) => (
-                    <Header>
-                      <Helmet
-                        title={txt}
-                        meta={[{ name: 'description', content: txt }]}
-                      />
-                      <H1>
-                        {txt}
-                      </H1>
-                    </Header>
-                  )}
-                </FormattedMessage>
-                {props.i18n.description}
-              </BigFirstLetter>
-            </ResumeContainer>
-          </SectionContent>
-	    </SectionBlock>
-	  </div>
+      <SectionBlock className="posts" backgroundColor={({ theme }) => theme.colors.blueishGreyPaletteSand}>
+        <Texture className="svg-background" width="100%" height="100%" data={{}} index={3} />
+        <SectionContent>
+          <ResumeContainer menu={menu} selectedPage="/about/">
+            <BigFirstLetter>
+              <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: structuredData }}
+              />
+              <FormattedMessage id="about">
+                {(txt) => (
+                  <Header>
+                    <Helmet
+                      title={txt}
+                      meta={[{ name: 'description', content: txt }]}
+                    />
+                    <H1>
+                      {txt}
+                    </H1>
+                  </Header>
+                )}
+              </FormattedMessage>
+              {props.i18n.description}
+            </BigFirstLetter>
+          </ResumeContainer>
+        </SectionContent>
+      </SectionBlock>
+    </div>
   );
 };
 

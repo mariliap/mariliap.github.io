@@ -26,8 +26,7 @@ const large = (...args) => css`
 `;
 
 const SectionBlock = styled.section`
-  background-color:  ${props => props.backgroundColor};
-  
+  background-color:  ${props => props.backgroundColor};  
   ${small`
     padding: 10px 10px 10px 10px;
   `};
@@ -85,45 +84,45 @@ const Li = styled.li`
 
 const TagsPageRoute = (props) => {
   const allTags = props.data.allMarkdownRemark.group;
-	const backgroundColor = ({ theme }) => theme.colors.blueishGrey;
+  const backgroundColor = ({ theme }) => theme.colors.blueishGrey;
 
   return (
-	  <div>
-      <SectionBlock  backgroundColor={({ theme }) => theme.colors.blueishGreyPaletteGreen} >
-        <Texture className="svg-background" width={'100%'} height={'100%'} data={{}} index={3}/>
-	      <SectionContent>
-		      <FormattedMessage id="tags">
-			      {(txt) => (
-				      <header>
-					      <Helmet
-						      title={txt}
-						      meta={[{ name: 'description', content: txt }]}
-					      />
-					      <H1>
-						      {txt}
-					      </H1>
-				      </header>
+    <div>
+      <SectionBlock backgroundColor={({ theme }) => theme.colors.blueishGreyPaletteGreen}>
+        <Texture className="svg-background" width="100%" height="100%" data={{}} index={3} />
+        <SectionContent>
+          <FormattedMessage id="tags">
+            {(txt) => (
+              <header>
+                <Helmet
+                  title={txt}
+                  meta={[{ name: 'description', content: txt }]}
+                />
+                <H1>
+                  {txt}
+                </H1>
+              </header>
 			      )}
-		      </FormattedMessage>
-		      <Scrollbars style={{ height: '50vh' }} >
-			      <Nav>
-				      <ul>
-					      {allTags.map(tag =>
-						      <Li key={tag.fieldValue}>
-							      <Link
-								      style={{
+          </FormattedMessage>
+          <Scrollbars style={{ height: '50vh' }}>
+            <Nav>
+              <ul>
+                {allTags.map(tag =>
+                  <Li key={tag.fieldValue}>
+                    <Link
+                  style={{
 									      textDecoration: 'none',
 								      }}
-								      to={`${props.pathContext.langKey}/tags/${kebabCase(tag.fieldValue)}/`}
-							      >
-								      {tag.fieldValue} ({tag.totalCount})
-							      </Link>
-						      </Li>
+                  to={`${props.pageContext.langKey}/tags/${kebabCase(tag.fieldValue)}/`}
+                >
+                  {tag.fieldValue} ({tag.totalCount})
+                </Link>
+                  </Li>
 					      )}
-				      </ul>
-			      </Nav>
-		      </Scrollbars>
-	      </SectionContent>
+              </ul>
+            </Nav>
+          </Scrollbars>
+        </SectionContent>
       </SectionBlock>
     </div>
   );
@@ -131,7 +130,7 @@ const TagsPageRoute = (props) => {
 
 TagsPageRoute.propTypes = {
   data: PropTypes.object,
-  pathContext: PropTypes.object
+  pageContext: PropTypes.object
 };
 
 export default TagsPageRoute;

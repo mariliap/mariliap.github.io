@@ -8,7 +8,7 @@ import Texture from '../layout/Texture.js'
 
 const EducationsPage = (props) => {
   const { educations, menu } = props.data.site.siteMetadata.resume;
-  const { langKey } = props.pathContext;
+  const { langKey } = props.pageContext;
 
   return (
 	  <div>
@@ -32,7 +32,7 @@ const EducationsPage = (props) => {
 
 EducationsPage.propTypes = {
   data: PropTypes.object.isRequired,
-  pathContext: PropTypes.object.isRequired
+  pageContext: PropTypes.object.isRequired
 };
 
 export default EducationsPage;

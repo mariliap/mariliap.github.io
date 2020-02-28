@@ -1,6 +1,6 @@
 import React from 'react';
 import EducationsPage from '../../../components/resume/EducationsPage';
-import graphql from 'graphql';
+import {graphql} from 'gatsby';
 
 export default (props) =>
   <EducationsPage

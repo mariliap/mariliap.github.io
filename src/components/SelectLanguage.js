@@ -5,7 +5,7 @@ import Ca from './flags/Ca';
 import Fr from './flags/Fr';
 import { InvisibleSpan } from '../components/Invisible';
 import styled from 'styled-components';
-import Link from 'gatsby-link';
+import {Link} from 'gatsby';
 import { FormattedMessage } from 'react-intl';
 
 const Nav = styled.nav`

@@ -1,6 +1,6 @@
 import React from 'react';
 import TechnologiesPage from '../../components/resume/TechnologiesPage';
-import graphql from 'graphql';
+import {graphql} from 'gatsby';
 
 export default (props) =>
   <TechnologiesPage

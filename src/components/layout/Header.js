@@ -10,7 +10,7 @@ import { FormattedMessage } from 'react-intl';
 
 
 const Wrapper = styled.header`
-
+ 
   ${({theme, isHome}) => isHome
     ? ``
     : `
@@ -34,7 +34,7 @@ const Wrapper = styled.header`
 const Header = ({ menu, isHome, langs,  url }) => {
   return (
     <Wrapper isHome={isHome}>
-      <Menu menu={menu} langs={langs} url={url} />
+      <Menu menu={menu} langs={langs} url={url}  />
     </Wrapper>
   );
 };

@@ -84,7 +84,7 @@ const getTechnologies = (project) =>
     : null;
 
 const ProjectPage = (props) => {
-  const { job, project } = props.pathContext;
+  const { job, project } = props.pageContext;
   const { menu } = props.data.site.siteMetadata.resume;
   const description = project.description;
 
@@ -119,7 +119,7 @@ const ProjectPage = (props) => {
 
 ProjectPage.propTypes = {
   intl: PropTypes.object.isRequired,
-  pathContext: PropTypes.shape({
+  pageContext: PropTypes.shape({
     project: PropTypes.shape({
       name: PropTypes.string.isRequired,
       slug: PropTypes.string.isRequired,

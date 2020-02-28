@@ -65,29 +65,29 @@ import Texture from '../components/Texture.js';
 
 const Blog = (props) => {
   return (
-	  <div>
-		  <SectionBlock className="posts" backgroundColor={({ theme }) => theme.colors.blueishGreyPaletteSand} >
-			  <Texture className="svg-background" width={'100%'} height={'100%'} data={{}} index={3}/>
-			  <SectionContent>
-				  <FormattedMessage id="posts">
-					  {(txt) => (
-						  <header>
-							  <Helmet
-								  title={txt}
-								  meta={[{ name: 'description', content: txt }]}
-							  />
-							  <H1>
-								  {txt}
-							  </H1>
-						  </header>
+    <div>
+      <SectionBlock className="posts" backgroundColor={({ theme }) => theme.colors.blueishGreyPaletteSand}>
+        <Texture className="svg-background" width="100%" height="100%" data={{}} index={3} />
+        <SectionContent>
+          <FormattedMessage id="posts">
+            {(txt) => (
+              <header>
+                <Helmet
+                  title={txt}
+                  meta={[{ name: 'description', content: txt }]}
+                />
+                <H1>
+                  {txt}
+                </H1>
+              </header>
 					  )}
-				  </FormattedMessage>
-				  <PostList
-					  posts={props.data.allMarkdownRemark.edges.map(p => p.node)}
-				  />
-			  </SectionContent>
-		  </SectionBlock>
-	  </div>
+          </FormattedMessage>
+          <PostList
+            posts={props.data.allMarkdownRemark.edges.map(p => p.node)}
+          />
+        </SectionContent>
+      </SectionBlock>
+    </div>
   );
 };
 

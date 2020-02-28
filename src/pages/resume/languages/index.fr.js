@@ -1,6 +1,6 @@
 import React from 'react';
 import LanguagesPage from '../../../components/resume/LanguagesPage';
-import graphql from 'graphql';
+import {graphql} from 'gatsby';
 
 export default (props) =>
   <LanguagesPage

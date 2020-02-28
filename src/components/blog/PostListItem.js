@@ -87,7 +87,7 @@ const PostListItem = ({ post }) => {
             date={post.frontmatter.date}
           />
         </Header>
-		    <Title>{post.frontmatter.title}</Title>
+        <Title>{post.frontmatter.title}</Title>
         <P>{post.excerpt}</P>
       </Link>
     </Li>
