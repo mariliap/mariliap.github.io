@@ -66,6 +66,8 @@ import Texture from '../components/layout/Texture.js';
 
 // Acessar a propriedade theme do styleComponent, que foi criada pelo ThemeProvider:
 //Ver linha 76: backgroundColor={({ theme }) => theme.colors.blueishGreyPaletteSand}
+//Nós conseguimos obter a propriedade theme do SectionBlock se ele estiver
+//encapsulado por um ThemeProvider
 
 const Blog = (props) => {
   console.log(props);

@@ -11,6 +11,9 @@ import Comments from '../components/Comments';
 import Posts from '../components/blog/Posts';
 import AnchorJS from 'anchor-js';
 import Texture from '../components/layout/Texture';
+import Layout from '../layouts/_layout';
+import messages from '../data/messages/en';
+import Index from '../components/IndexPage';
 
 
 
@@ -278,6 +281,8 @@ class BlogPostRoute extends React.PureComponent {
     anchors.add('h1, h2');
   }
 
+  //Ir para gatsby-config.js e procurar por 'gatsby-plugin-i18n'
+  //Ali estão os caminhos de acordo com a URL, é assim que se chega nesta página
   render(){
     const { markdownRemark } = this.props.data;
     const { langKey } = this.props.pageContext;
@@ -290,51 +295,56 @@ class BlogPostRoute extends React.PureComponent {
     );
   
     return (
-      <PostBlock>
-        <Texture className="svg-background" width="100%" height="100%" data={{}} index={0} />
-        <Post>
-          <Helmet
-            title={`${markdownRemark.frontmatter.title}`}
-            meta={[{ name: 'description', content: markdownRemark.excerpt }]}
-          />
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: structuredData }}
-          />
-          <header>
-            <H1>
-              {markdownRemark.frontmatter.title}
-            </H1>
-            <Time
-              pubdate
-              date={markdownRemark.frontmatter.date}
-              langKey={langKey}
+      <Layout {...this.props} i18nMessages={messages}>
+
+
+        <PostBlock>
+          <Texture className="svg-background" width="100%" height="100%" data={{}} index={0} />
+          <Post>
+            <Helmet
+              title={`${markdownRemark.frontmatter.title}`}
+              meta={[{ name: 'description', content: markdownRemark.excerpt }]}
             />
-          </header>
-          <EditBtn
-            fileAbsolutePath={markdownRemark.fileAbsolutePath}
-            currentLangKey={langKey}
-          />
-          {tags}
-          {youtube}
-          <Content dangerouslySetInnerHTML={{ __html: markdownRemark.html }} />
-          {/*<SectionSeparator/>*/}
-          {/*<Comments*/}
-          {/*shortname="angeloocana-com"*/}
-          {/*identifier={markdownRemark.fields.slug}*/}
-          {/*title={markdownRemark.frontmatter.title}*/}
-          {/*url={url}*/}
-          {/*/>*/}
-          <SectionSeparator />
-          {tags}
-          <Posts
-            posts={markdownRemark.fields.readNextPosts}
-            langKey={langKey}
-            showBtnMorePosts
-            title="posts.readNext"
-          />
-        </Post>
-      </PostBlock>
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{ __html: structuredData }}
+            />
+            <header>
+              <H1>
+                {markdownRemark.frontmatter.title}
+              </H1>
+              <Time
+                pubdate
+                date={markdownRemark.frontmatter.date}
+                langKey={langKey}
+              />
+            </header>
+            <EditBtn
+              fileAbsolutePath={markdownRemark.fileAbsolutePath}
+              currentLangKey={langKey}
+            />
+            {tags}
+            {youtube}
+            <Content dangerouslySetInnerHTML={{ __html: markdownRemark.html }} />
+            {/*<SectionSeparator/>*/}
+            {/*<Comments*/}
+            {/*shortname="angeloocana-com"*/}
+            {/*identifier={markdownRemark.fields.slug}*/}
+            {/*title={markdownRemark.frontmatter.title}*/}
+            {/*url={url}*/}
+            {/*/>*/}
+            <SectionSeparator />
+            {tags}
+            <Posts
+              posts={markdownRemark.fields.readNextPosts}
+              langKey={langKey}
+              showBtnMorePosts
+              title="posts.readNext"
+            />
+          </Post>
+        </PostBlock>
+
+      </Layout>
     );
   }
 }
@@ -418,5 +428,44 @@ export const pageQuery = graphql`
         }
       }
     }
+    site{
+        siteMetadata{
+          languages {
+            defaultLangKey
+            langs
+          }
+          author {
+            name
+            homeCity
+            homeCityLink
+            email
+            defaultLink
+          }
+          sourceCodeLink
+          menu {
+            label
+            link
+            slug
+            items{
+              label
+              slug
+            }
+          }
+          resume{
+            pinnedTechnologies{
+              name,
+              tags,
+              level,
+              years,
+              img
+            }
+            projects{
+              name,
+              link,
+              img
+            }
+          }
+        }
+      }
   }
 `;
